@@ -1,0 +1,22 @@
+﻿CREATE TABLE [dbo].[tmp_ms_xx_tp_product_details] (
+    [pd_id]                    INT            IDENTITY (1, 1) NOT NULL,
+    [pd_seqno]                 VARCHAR (100)  NOT NULL,
+    [pd_name]                  NVARCHAR (100) NULL,
+    [pd_pc_id]                 INT            NULL,
+    [pd_description1]          NVARCHAR (MAX) NULL,
+    [pd_base_price]            NVARCHAR (100) NULL,
+    [pd_image_url]             NVARCHAR (100) NULL,
+    [pd_is_active]             BIT            NULL,
+    [pd_is_delivered]          BIT            NULL,
+    [pd_is_marked_new]         BIT            NULL,
+    [pd_is_marked_speciality]  BIT            NULL,
+    [pd_can_comment]           BIT            NULL,
+    [pd_Is_Commant_Compulsary] BIT            NULL,
+    [pd_isdeleted]             BIT            NULL,
+    [createdby]                INT            NULL,
+    [modifiedby]               INT            NULL,
+    [createdon]                DATETIME       NULL,
+    [modifiedon]               DATETIME       NULL,
+    [pd_sd_id]                 INT            NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_PK_tp_product_details] PRIMARY KEY CLUSTERED ([pd_id] ASC)
+);

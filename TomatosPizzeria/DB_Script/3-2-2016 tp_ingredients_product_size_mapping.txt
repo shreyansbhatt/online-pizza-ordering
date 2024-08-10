@@ -1,0 +1,6 @@
+ALTER TABLE [dbo].[tp_ingredients_product_size_mapping]
+    ADD [ipsm_isdeleted] BIT      NULL,
+        [createdby]     INT      NULL,
+        [modifiedby]    INT      NULL,
+        [createdon]     DATETIME NULL,
+        [modifiedon]    DATETIME NULL;

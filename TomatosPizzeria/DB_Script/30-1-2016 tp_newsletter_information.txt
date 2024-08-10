@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[tp_newsletter_information]
+(
+	[nl_id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [nl_email] NVARCHAR(100) NULL, 
+    [nl_issubscribed] BIT NULL, 
+    [nl_isdeleted] BIT NULL, 
+    [createdby] INT NULL, 
+    [modifiedby] INT NULL, 
+    [createdon] DATETIME NULL, 
+    [modifiedon] DATETIME NULL
+)

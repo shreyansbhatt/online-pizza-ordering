@@ -1,0 +1,42 @@
+
+Log Entry : 11/03/2016 09:03:56
+Inner Exception : 
+File Name : 
+Line : 0
+Column: 0
+Error Message: Input string was not in a correct format.
+Source: mscorlib
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at OrderOnline.BindIngredientByPrice(DataList dlIngredientList, String price) in d:\DEV1\PRJ_Tomatos Pizzeria\TomatosPizzaDev\TomatosPizzeria\OrderOnline.aspx.cs:line 2269
+TargetSite:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+__________________________
+
+Log Entry : 11/03/2016 09:03:59
+Inner Exception : 
+File Name : 
+Line : 0
+Column: 0
+Error Message: Input string was not in a correct format.
+Source: mscorlib
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at OrderOnline.BindIngredientByPrice(DataList dlIngredientList, String price) in d:\DEV1\PRJ_Tomatos Pizzeria\TomatosPizzaDev\TomatosPizzeria\OrderOnline.aspx.cs:line 2269
+TargetSite:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+__________________________
+
+Log Entry : 11/03/2016 09:05:35
+Inner Exception : 
+File Name : 
+Line : 0
+Column: 0
+Error Message: Input string was not in a correct format.
+Source: mscorlib
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at OrderOnline.BindIngredientByPrice(DataList dlIngredientList, String price) in d:\DEV1\PRJ_Tomatos Pizzeria\TomatosPizzaDev\TomatosPizzeria\OrderOnline.aspx.cs:line 2269
+TargetSite:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+__________________________

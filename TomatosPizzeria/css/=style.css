@@ -1,0 +1,2247 @@
+/* CSS Document */
+.affix {
+    position: fixed;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    background-image: url(../images/bg.jpg) !important;
+    font-family: Ebrima !important;
+}
+
+.inner-wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.navbar {
+    height: 70px;
+    border-radius: 0px !important;
+}
+
+.navbar-nav {
+    margin: 8px;
+}
+
+.navbar-header {
+    margin: 8px 0 0 0;
+}
+
+ul ol li {
+    margin: 0px;
+    padding: 0px;
+}
+
+img {
+    border: none;
+}
+
+.header {
+    position: fixed;
+    float: left;
+    z-index: 9999;
+    background: rgba(35, 35, 39, 0.94) none repeat scroll 0% 0%;
+    /*width: 76%;*/
+    height: 200px;
+    top: 0px;
+}
+
+.order-online {
+    position: static;
+    margin-top: 250px;
+}
+
+.top-bar {
+    padding: 2em 0px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.top-left {
+}
+
+    .top-left span {
+        color: #fff;
+        font-size: 16px;
+        text-transform: capitalize;
+    }
+
+.top-right {
+    margin: 0em 0 0 4em;
+}
+
+.contact-detail-top {
+    width: 100%;
+    overflow: hidden;
+}
+
+.top-left span.phone {
+    float: left;
+}
+
+.top-left span.fax {
+    float: right;
+}
+
+ul.social-icons {
+    float: left;
+}
+
+.register {
+    padding: 0 20px;
+}
+
+ul.social-icons li a span {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background: url(../images/social-icons.png) no-repeat 0px 0px;
+}
+
+ul.social-icons li {
+    display: inline-block;
+}
+
+    ul.social-icons li a span.facebook {
+        background-position: -12px -2px;
+    }
+
+    ul.social-icons li a span.google-plus {
+        background-position: -48px -2px;
+    }
+
+    ul.social-icons li a span.linkedin {
+        background-position: -86px -2px;
+    }
+
+    ul.social-icons li a span.youtube {
+        background-position: -122px -2px;
+    }
+
+ul.login-div {
+    float: left;
+}
+
+    ul.login-div li {
+        display: inline-block;
+    }
+
+        ul.login-div li a span {
+            text-transform: uppercase;
+            color: #f1efef;
+            margin: 0 1em;
+        }
+
+.navbar {
+    background: rgba(255, 255, 255, 0.19);
+    color: #f0eeee !important;
+}
+
+.navbar-nav > li > a {
+    color: #f0eeee !important;
+    font-size: 20px;
+}
+
+    .navbar-nav > li > a:hover {
+        background: #ca3027 !important;
+    }
+
+.navbar-nav > li {
+    margin: 0 50px;
+}
+
+.navbar-nav1 > li {
+    margin: 0 35px !important;
+}
+
+.navbar-brand {
+    float: right !important;
+}
+
+    .navbar-brand img {
+        width: 130px;
+        height: 220px;
+        float: right;
+        position: absolute;
+        top: -6em;
+        right: -1em;
+    }
+
+.navbar-toggle .icon-bar {
+    border: 1px solid;
+}
+
+.navbar-nav > li.order {
+    background: rgb(202, 48, 39) none repeat scroll 0% 0%;
+    border-radius: 5px;
+    margin-top: 6px !important;
+    margin-left: 2px !important;
+}
+
+    .navbar-nav > li.order a {
+        text-transform: uppercase;
+        font-size: 17px;
+        padding: 10px 30px;
+    }
+
+.affix {
+    top: 0;
+    width: 80%;
+    background: #181616;
+    z-index: 999;
+}
+
+    .affix .navbar-brand img {
+        width: 100px;
+        height: 120px;
+        position: absolute;
+        top: 0em;
+        right: 0em;
+    }
+
+    .affix + .container-fluid {
+        padding-top: 70px;
+    }
+
+    .affix ~ .container-fluid {
+        position: relative;
+        top: 50px;
+    }
+
+.header .navbar-brand img {
+    width: 120px;
+    height: 200px;
+    right: -2em;
+}
+/*	---------------------------------------Footer-----------------------------------------*/
+
+.footer {
+    background: RGBA(21, 22, 24, 0.62);
+    padding: 1em 0px;
+    overflow: hidden;
+    width: 100%;
+}
+
+    .footer h3 {
+        color: #ffffff;
+    }
+
+    .footer ul {
+        padding: 0px;
+    }
+
+.address-footer {
+    padding: 0 3em;
+}
+
+.footer ul li {
+    color: #dbdbdb;
+    list-style: none;
+    line-height: 2;
+}
+
+    .footer ul li span {
+        margin-right: 1em;
+    }
+
+.footer-top {
+    padding-bottom: 10px;
+}
+
+.footer-bottom {
+    padding: 1em 2em;
+}
+
+    .footer-bottom .contact, .footer-bottom .contact-phone {
+        float: left;
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 3;
+    }
+
+    .footer-bottom .contact-phone {
+        float: right;
+    }
+
+.bottom-section {
+    color: #929090;
+    overflow: hidden;
+    border-top: 1px solid #595959;
+    padding: 1em 2em;
+    width: 100%;
+}
+
+.copyright-section {
+    float: left;
+    width: 25%;
+}
+
+.message-section {
+    color: #ca3027;
+    float: left;
+    width: 45%;
+    padding: 0 1em;
+    text-align: center;
+}
+
+.privacy-section {
+    float: left;
+    width: 30%;
+}
+
+    .privacy-section ul li {
+        float: left;
+    }
+
+    .privacy-section ul {
+        padding: 0px;
+        float: right;
+    }
+
+        .privacy-section ul li a {
+            padding: 0 8px;
+            color: #929090;
+            float: left;
+            font-size: 12px;
+        }
+
+
+/*	---------------------------------------Home-----------------------------------------*/
+
+.top-left-slider {
+    background: #ffffff;
+    padding: 0px;
+}
+
+.top-slider .col-md-8, .top-slider .col-md-4 {
+    padding: 0px !important;
+}
+
+.dynamic-img {
+    width: 546px;
+}
+
+.top-right-slider {
+    float: left;
+    overflow: hidden;
+}
+
+.title-daily-special {
+    position: absolute;
+}
+
+.top-slider, .bottom-slider {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1em;
+}
+
+/*	---------------------------------------Slider-top-----------------------------------------*/
+
+/* jssor slider bullet navigator skin 05 css */
+/*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+.jssorb05 {
+    position: absolute;
+}
+
+    .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+        position: absolute;
+        /* size of bullet elment */
+        width: 16px;
+        height: 16px;
+        background: url(../images/b05.png) no-repeat;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .jssorb05 div {
+        background-position: -7px -7px;
+    }
+
+        .jssorb05 div:hover, .jssorb05 .av:hover {
+            background-position: -37px -7px;
+        }
+
+    .jssorb05 .av {
+        background-position: -67px -7px;
+    }
+
+    .jssorb05 .dn, .jssorb05 .dn:hover {
+        background-position: -97px -7px;
+    }
+
+/* jssor slider arrow navigator skin 12 css */
+/*
+        .jssora12l                  (normal)
+        .jssora12r                  (normal)
+        .jssora12l:hover            (normal mouseover)
+        .jssora12r:hover            (normal mouseover)
+        .jssora12l.jssora12ldn      (mousedown)
+        .jssora12r.jssora12rdn      (mousedown)
+        */
+.jssora12l, .jssora12r {
+    display: block;
+    position: absolute;
+    /* size of arrow element */
+    width: 30px;
+    height: 46px;
+    cursor: pointer;
+    background: url(../images/a12.png) no-repeat;
+    overflow: hidden;
+}
+
+.jssora12l {
+    background-position: -16px -37px;
+}
+
+.jssora12r {
+    background-position: -75px -37px;
+}
+
+.jssora12l:hover {
+    background-position: -136px -37px;
+}
+
+.jssora12r:hover {
+    background-position: -195px -37px;
+}
+
+.jssora12l.jssora12ldn {
+    background-position: -256px -37px;
+}
+
+.jssora12r.jssora12rdn {
+    background-position: -315px -37px;
+}
+
+.slides {
+    cursor: default;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+}
+
+
+/*	---------------------------------------Register-----------------------------------------*/
+
+
+
+.registration-page {
+    background: rgba(240, 240, 240, 0.22);
+    width: 100%;
+    padding: 2em;
+    margin-top: 4em;
+    overflow: hidden;
+}
+
+    .registration-page h3 {
+        color: #fff;
+        letter-spacing: normal;
+        font-size: 2.2em;
+    }
+
+#regiter-form {
+    margin: 2em;
+}
+
+.register-div {
+    padding: 2em 4em;
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid #ca3027;
+}
+
+    .register-div label {
+        color: #ffffff;
+    }
+
+.form-group label {
+    width: 25%;
+    float: left;
+    font-weight: normal;
+    line-height: 2;
+    font-size: 17px;
+}
+
+.form-group span {
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.register-div .form-group input[ type="text"], .register-div .form-group input[ type="email"], .register-div .form-group input[ type="password"], .register-div .form-group textarea, .register-div .password-section {
+    width: 70%;
+    float: left;
+    /*text-transform: lowercase;*/
+    color: #8D8A8A;
+}
+
+.form-group {
+    width: 100%;
+    float: left;
+}
+
+    .form-group select {
+        width: 80%;
+        float: left;
+        padding: 0px 0px;
+        padding-left: 9px;
+    }
+
+    .form-group .radio-right {
+        margin-left: 10px;
+    }
+
+    .form-group input[ type="radio"] {
+        margin-right: 5px;
+    }
+
+    .form-group span a {
+        color: #ec3e34;
+    }
+
+.submit-btn {
+    background: #ca3027;
+    color: #ffffff;
+    border: none;
+    padding: 8px;
+    text-transform: uppercase;
+    width: 20%;
+    border-radius: 5px;
+}
+
+    .submit-btn:hover {
+        /*background: #e01a0e;*/
+        border: none;
+        border-radius: 0px;
+        background-color: #ca3027 !important;
+    }
+
+.span_1_of_2 {
+    width: 37%;
+    float: left;
+}
+
+.register-div .span_1_of_2 select, .register-div .span_1_of_2 input[ type="password"] {
+    width: 89%;
+    color: #888888;
+    padding: 6px;
+}
+
+.register-div .span_1_of_2 input[type="password"] {
+    width: 89%;
+    color: #888888;
+    padding-left: 12px;
+}
+
+.register-div .span_1_of_2 select {
+    width: 65%;
+    color: #888888;
+    padding-left: 12px;
+}
+
+/*	---------------------------------------Login-----------------------------------------*/
+
+#login-form {
+    margin: 10px 2em;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+    #login-form h4 {
+        padding-bottom: 1em;
+    }
+
+#owl-demo .item {
+    margin: 3px;
+}
+
+    #owl-demo .item img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+.bottom-slider .thumbnail {
+    padding: 0px !important;
+    border: none !important;
+}
+
+
+/* ---------------------------------------Order-Online -----------------------------------------*/
+
+.inner-div {
+    background: rgba(240, 240, 240, 0.22);
+    padding: 1em 5px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.order-onlie-section .nav {
+    padding-bottom: 15px;
+}
+
+.order-onlie-section .category_details {
+    background: rgba(255, 255, 255, 0.92) none repeat scroll 0% 0%;
+}
+
+.modal-header {
+    background: #ca3027 !important;
+    color: #ffffff;
+}
+
+.category_details .table td {
+    color: #333333;
+}
+
+    .category_details .table td span {
+        display: block;
+    }
+
+        .category_details .table td span.size a {
+            color: #ca3027 !important;
+        }
+
+        .category_details .table td span.price {
+            color: #333333;
+            font-weight: 600;
+        }
+
+.order-onlie-section .nav a {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ca3027;
+}
+
+    .order-onlie-section .nav a:selected, .order-onlie-section .nav a:focus, .order-onlie-section .nav a:active {
+        background: #ffffff;
+    }
+
+.order-onlie-section .nav p {
+    font-size: 12px;
+    padding: 0 15px;
+    margin-bottom: 0px;
+}
+
+.category_details .table th {
+    color: #ca3027;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.order-online .my_cart {
+    width: 100%;
+    margin-top: 1.2em;
+}
+
+.order-online .size-popup{
+    margin-top:1.2em;
+}
+
+.my_cart h2 {
+    padding-top: 10px;
+}
+
+.category_details .product_summary {
+    background: #ca3027;
+    color: #ffffff;
+    padding: 0px 8px;
+    margin-top: 0px;
+    overflow: hidden;
+}
+
+    .category_details .product_summary .col-md-12 {
+        padding: 0px;
+    }
+
+.category_details .ingredients_option_list {
+    /*height: 240px;*/
+    height: auto;
+    /*overflow-y: scroll;*/
+}
+
+.my_cart .cart_header h4 {
+    font-weight: 600;
+}
+
+.my_cart .product_detail {
+    padding: 5px 2em 2em;
+    font-size: 16px;
+    margin-top: 1em;
+    overflow: hidden;
+}
+
+    .my_cart .product_detail span.tax_value {
+        float: right;
+        font-weight: bold;
+        width: 20%;
+    }
+
+.place_order_btn {
+    background: #ca3027;
+    color: #ffffff;
+    padding: 0.8em 1em;
+    margin: 2em 0px;
+    width: 180px;
+    border-radius: 5px;
+    border-color: transparent;
+    height: 50px;
+}
+
+    /*.place_order_btn:hover {
+        border: none;
+        border-radius: 0px;
+        width: 180px;
+        height: 50px;
+    }*/
+    .place_order_btn:hover {
+        background: #ca3027;
+        color: #ffffff;
+        padding: 0.8em 1em;
+        margin: 2em 0px;
+        width: 180px;
+        border-radius: 0px;
+        border-color: transparent;
+        height: 50px;
+    }
+
+.size-popup {
+    width: 100%;
+    background: #ffffff;
+    color: #333333;
+    border: 1px solid #cecece;
+    position: relative;
+    padding: 1em;
+}
+
+    .size-popup .close {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+    }
+
+    .size-popup .selected_ingredient {
+        border-bottom: 1px solid rgb(204, 204, 204);
+    }
+
+.ingredients_option {
+    padding: 1.5em;
+}
+
+    .ingredients_option h2 {
+        text-align: center;
+    }
+
+    .ingredients_option ul.select_btn li {
+        float: left;
+        list-style: none;
+    }
+
+        .ingredients_option ul.select_btn li a {
+            margin: 0 10px;
+            color: #ffffff;
+            padding: 10px;
+            background: #ca3027;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    .ingredients_option .btn-div {
+        padding: 0 5em;
+    }
+
+.order-onlie-section .nav-pills > li > a:hover {
+    background: #ffffff !important;
+    /*color: #e1382e !important;*/
+    border-radius: 0px !important;
+}
+
+.order-onlie-section .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background: #ffffff !important;
+    color: #e1382e !important;
+    border-radius: 0px !important;
+}
+
+.ingredients_option ul.select_btn li a:hover {
+    background: #e1382e;
+}
+
+#ingredient_list {
+    width: 100%;
+    margin: 1em;
+    border: 1px solid #cccccc;
+    font-size: 16px;
+}
+
+    #ingredient_list .additional_comments {
+        width: 100%;
+        background: #cccccc;
+        background: #dedddd;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+        #ingredient_list .additional_comments #txtComment {
+            width: 80%;
+        }
+
+    #ingredient_list .sub-total {
+        width: 100%;
+        background: #cccccc;
+        background: #dedddd;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    #ingredient_list .add_cart {
+        background: #ca3027;
+        color: #ffffff;
+        padding: 0.6em 1em;
+        border: none;
+        float: right;
+    }
+
+    #ingredient_list .selected_ing {
+        padding: 10px;
+    }
+
+.ing_details {
+    padding: 0px 10px 20px;
+}
+
+#ing_spec .extra-ing-list {
+    width: 80%;
+    margin-top: 5px;
+}
+
+    #ing_spec .extra-ing-list .cell {
+        padding: 0px 5px;
+    }
+
+.ing_details .btn-lg {
+    width: 100%;
+    background: #f6f6f6;
+    ;
+    border-radius: 0px;
+    margin-top: 10px;
+}
+
+/*.sub-ing-option {
+    border: 1px solid #cccccc;
+    width: 100%;
+    padding: 1em 0px;
+    overflow: hidden;
+}*/
+.sub-ing-option {
+    width: 100%;
+    overflow: hidden;
+    padding: 0px !important;
+}
+
+.ing_details .panel-heading {
+    text-align: center !important;
+    height: 35px;
+    line-height: 1;
+}
+
+.sub-ing-option ul li {
+    list-style: none;
+    margin: 5px 0px;
+}
+
+    .sub-ing-option ul li input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+.category_details .cart_info .glyphicon {
+    font-size: 38px;
+    top: 0.8em;
+    right: 0.2em;
+    float: right;
+}
+
+.category_details .cart_info a span.glyphicon:hover {
+    font-size: 38px;
+    top: 0.8em;
+    right: 0.2em;
+    float: right;
+    color: #ffffff;
+}
+
+.highlight {
+    background-color: #ffffff !important;
+    border-radius: 0px !important;
+}
+
+#cart .modal-lg {
+    width: 1025px;
+    top: 13.3em;
+    position: sticky;
+    height: auto;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.modal-open .modal {
+    overflow-y: hidden !important;
+}
+
+.modal-header .close {
+    margin-top: 10px;
+    margin-right: 10px;
+    color: #FCF9F9 !important;
+    opacity: 1;
+    font-size: 28px;
+}
+
+.modal-content {
+    border-radius: 0px !important;
+}
+
+.product_title h1 {
+    padding: 0px;
+    margin: 7px 0px;
+}
+
+.red_font {
+    color: #ca3027;
+}
+
+.order-online .product_charges span {
+    text-align: right;
+    width: 90%;
+    float: left;
+}
+
+.order-online .my_cart .product_detail span.tax_value {
+    float: right;
+    font-weight: bold;
+    width: 10%;
+}
+
+.ingredients_option .btn-div {
+    margin: 2em auto;
+    width: 87%;
+    overflow: hidden;
+}
+
+.ingredients_option ul.select_btn li {
+    float: left;
+    list-style: none;
+    padding: 11px 5px;
+}
+
+.popup-title {
+	border-bottom: 1px solid #999999;
+	padding-bottom: 5px;
+}
+.size-popup .price {
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+}
+.size-popup textarea {
+	margin: 5px 0;
+	width: 100%;
+	padding: 5px;
+}
+.size-popup .ingredients_option {
+	padding: 5px 0;
+}
+.quantity-div, .crust-div {
+	float: left;
+	width: 48%;
+}
+.size-div {
+	float: right;
+	width: 48%;
+}
+.quantity-div>select, .size-div select, .crust-div select {
+	padding: 8px;
+	width: 100%;
+	margin: 5px 0;
+}
+.topping-div {
+	background: #666666 none repeat scroll 0 0;
+	padding: 7px;
+	margin: 6px 0;
+}
+.topping-div a {
+	color: #ffffff;
+}
+.topping-btn {
+	width: 100%;
+}
+
+.add_cart {
+  background: #ca3027 none repeat scroll 0 0;
+  border: 1px solid #ca3027;
+  border-radius: 4px;
+  box-shadow: none;
+  color: #ffffff;
+  padding: 6px 12px;
+}
+.cancel-btn {
+ background: #4C4C4F none repeat scroll 0 0;
+  border: 1px solid #4C4C4F;
+  border-radius: 4px;
+  box-shadow: none;
+  color: #ffffff;
+  padding: 6px 12px;
+}
+
+.topping-size {
+  border: 1px solid #dddddd;
+  display: inline-block;
+  width: 100%;
+}
+.full-text {
+  border-right: 2px solid #dddddd;
+  float: left;
+  font-weight: bold;
+  padding: 5px 0;
+  text-align: center;
+  width: 25%;
+}
+
+.full-text > input {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.full-text:last-child {
+  border-right: medium none;
+}
+
+.full-text:hover, .full-text:active {
+  background: #008000 none repeat scroll 0 0;
+  color: #ffffff;
+}
+
+
+
+
+/* ---------------------------------------Place-Order -----------------------------------------*/
+
+.customer-info .product_detail {
+    height: 618px;
+    overflow-y: scroll;
+}
+
+.user-login {
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.place-order .my_cart {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.92) none repeat scroll 0% 0%;
+}
+
+.customer-info {
+    width: 100%;
+    padding: 2em 1em;
+}
+
+    .customer-info h4 {
+        padding: 5px 0 0 1em;
+    }
+
+        .customer-info h4 a {
+            color: #ca3027;
+        }
+
+    .customer-info form {
+        overflow: hidden;
+        padding: 1em 0px;
+    }
+
+    .customer-info .form-group {
+        margin-bottom: 5px;
+    }
+
+        .customer-info .form-group select, .customer-info .form-group input[type="text"], .customer-info .form-group input[type="email"], .customer-info .form-group input[type="password"], .customer-info .form-group textarea {
+            width: 60% !important;
+            float: left;
+            padding: 8px;
+        }
+
+        .customer-info .form-group label {
+            width: 35%;
+            padding: 0 1em;
+        }
+
+.product_desc input {
+    width: 70px;
+}
+
+.customer-info .form-group .span_1_of_2 {
+    width: 30%;
+}
+
+    .customer-info .form-group .span_1_of_2 select {
+        width: 99% !important;
+    }
+
+.customer-info .submit-btn {
+    margin-top: 1em;
+}
+
+.cart_info button {
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.my_cart span.title {
+    margin-left: 7px;
+}
+
+.my_cart span.close_btn {
+    margin-right: 7px;
+}
+
+.inner-div .cart_header {
+    background: #ca3027;
+    padding: 5px 1.5em;
+    width: 100%;
+    color: #ffffff;
+}
+
+    .inner-div .cart_header span.title {
+        color: #FFFFFF;
+        font-size: 18px;
+    }
+
+.product_detail .alert {
+    margin: 5px 0px;
+    padding-top: 0px;
+    border: 1px solid #cccccc;
+}
+
+    .product_detail .alert .row1 {
+        padding: 12px 0px;
+        background: rgb(231, 231, 231) none repeat scroll 0% 0%;
+    }
+
+    .product_detail .alert .row2 {
+        padding: 5px 0px;
+        background: #ffffff;
+    }
+
+    .product_detail .alert .selected_prdct {
+        font-size: 15px;
+        font-weight: 600;
+        color: #ca3027;
+    }
+
+.product_title {
+    background: #ca3027;
+}
+
+    .product_title span {
+        font-size: 18px;
+        color: #ffffff;
+    }
+
+.item_no {
+    float: left;
+    line-height: 4;
+}
+
+.cart {
+    float: left;
+}
+
+.cart_info {
+    /*float: left;*/
+    float: right;
+    position: absolute;
+    z-index: 9999;
+    color: #ffffff;
+    top: 10em;
+    right: 8em;
+}
+
+.coupon_div input {
+    height: 32px;
+    border: 1px solid #cecece;
+}
+
+.product_charges .apply_btn {
+    background: #ca3027;
+    color: #ffffff;
+    padding: 5px 20px;
+    border: none;
+    font-size: 14px;
+    text-transform: capitalize;
+    height: 32px;
+    width: 40%;
+}
+
+.coupon_div {
+    margin-top: 5px;
+    width: 100%;
+    float: left;
+    padding-bottom: 1em;
+}
+
+.product_charges span {
+    text-align: right;
+    width: 80%;
+    float: left;
+}
+
+.product_desc input {
+    width: 50px;
+    top: -8px;
+    position: relative;
+}
+
+.place-order .product_desc input {
+    width: 50px;
+    top: 2px;
+}
+
+.product_detail .alert .selected_prdct {
+    font-size: 17px;
+    font-weight: 600;
+    color: #ca3027;
+}
+
+
+@media only screen and (max-width:1024px) {
+    .ingredients_option ul.select_btn li a {
+        margin: 0 5px;
+    }
+
+    .ingredients_option ul.select_btn li {
+        margin: 0px;
+    }
+
+    .product_detail .alert .selected_prdct {
+        font-size: 16px;
+    }
+
+    .order-onlie-section .nav a {
+        font-size: 22px;
+    }
+
+    @media only screen and (max-width:800px) {
+        .register-div .span_1_of_2 select {
+            width: 68%;
+        }
+
+        .ingredients_option .btn-div {
+            width: 100%;
+        }
+
+        .product_title h1 {
+            font-size: 26px;
+        }
+    }
+
+    @media only screen and (min-width:640px) and (max-width:768px) {
+        .navbar-nav > li {
+            float: left;
+        }
+
+            .navbar-nav > li.order a {
+                font-size: 16px;
+                padding: 10px 12px;
+            }
+
+            .navbar-nav > li.order {
+                margin-top: 0px !important;
+            }
+
+        .category_details .table td {
+            font-size: 12px;
+            padding: 5px 0px;
+        }
+
+        .category_details .table th {
+            font-size: 12px;
+        }
+    }
+
+    @media only screen and (max-width:640px) {
+        .navbar-nav > li {
+            margin: 2px;
+        }
+
+        .top-bar {
+            padding: 1em 0px 12px 0px;
+        }
+
+        .navbar-brand img {
+            width: 100px;
+            height: 180px;
+            top: -6em;
+        }
+
+        .footer {
+            padding: 0px;
+        }
+
+        .product_detail .alert .selected_prdct {
+            font-size: 15px;
+        }
+    }
+
+
+
+    @media only screen and (max-width:480px) {
+        .register-div .form-group label {
+            margin-bottom: 0px;
+        }
+
+        .footer-bottom .contact, .footer-bottom .contact-phone {
+            font-size: 13px;
+            line-height: 2;
+        }
+
+        .copyright-section, .message-section, .privacy-section {
+            font-size: 12px;
+        }
+
+        .registration-page h3 {
+            font-size: 1.8em;
+        }
+
+        .form-group label {
+            font-size: 15px;
+        }
+
+        .ingredients_option ul.select_btn li a {
+            display: block;
+            text-align: center;
+        }
+
+        #ingredient_list .add_cart {
+            padding: 0.6em;
+        }
+
+        .product_detail .alert .selected_prdct {
+            font-size: 14px;
+        }
+
+        .order-onlie-section .nav a {
+            font-size: 17px;
+        }
+
+        .category_details .table th {
+            font-size: 14px;
+        }
+
+        .register-div .span_1_of_2 select {
+            width: 100%;
+        }
+
+        .span_1_of_2 {
+            width: 100%;
+        }
+
+        .ingredients_option .btn-div {
+            width: 80%;
+        }
+
+        .ingredients_option ul.select_btn li {
+            width: 200px;
+        }
+
+        /*.category_details .ingredients_option_list {
+            height: 150px;
+            width: 500px;
+        }
+
+        .order-onlie-section .category_details {
+            height: 200px;
+            overflow: scroll;
+            width: 100%;
+        }*/
+    }
+
+    @media only screen and (max-width:360px) {
+        .order-onlie-section .nav a {
+            font-size: 15px;
+        }
+
+        .ingredients_option .btn-div {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width:320px) {
+        .ingredients_option ul.select_btn li {
+            width: 140px;
+        }
+    }
+
+
+    /* ---------------------------------------Offers Page-----------------------------------------*/
+
+    .offers-section {
+        padding: 1em;
+    }
+
+        .offers-section .panel-body {
+            line-height: 2.2;
+        }
+
+        .offers-section .modal-dialog {
+            margin-top: 12em !important;
+        }
+
+        .offers-section .panel-heading {
+            overflow: hidden;
+            color: #ca3027;
+            font-weight: 600;
+            color: #504F4F !important;
+        }
+
+    .offer_heading h1 {
+        line-height: 2;
+    }
+
+    #subscribe_form {
+        vertical-align: middle;
+    }
+
+        #subscribe_form input[type="text"] {
+            width: 55%;
+            float: left;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        #subscribe_form .btn {
+            width: 100px;
+            position: absolute;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+            #subscribe_form .btn:hover {
+                border: none;
+                border-radius: 0px;
+            }
+
+    .offer-header {
+        background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+        padding: 1em;
+        overflow: hidden;
+        width: 97%;
+        margin: 0px auto;
+    }
+    /* ---------------------------------------Customer Order Page-----------------------------------------*/
+
+    .customer-order {
+        padding: 2em;
+    }
+
+    .product_detail .heading {
+        padding: 1em 0px;
+        background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+    }
+
+    .customer-order .nav-tabs > li {
+        background: #ededed;
+    }
+    /* ---------------------------------------Media Querries-----------------------------------------*/
+
+
+
+    @media only screen and (max-width:1920px) {
+    }
+
+    @media only screen and (min-width:1680px) {
+        .header {
+            width: 54%;
+        }
+    }
+
+    @media only screen and (min-width:1580px) and (max-width:1660px) {
+        .header {
+            width: 65%;
+        }
+    }
+
+
+    @media only screen and (min-width:1400px) and (max-width:1570px) {
+        .header {
+            width: 70%;
+        }
+    }
+
+    @media only screen and (min-width:1300px) and (max-width:1400px) {
+        .header {
+            width: 75%;
+        }
+    }
+
+    @media only screen and (max-width:1280px) {
+        .top-right {
+            margin: 1em 0 0 1em;
+        }
+
+        #ingredient_list {
+            margin: 1em 0px;
+            overflow: hidden;
+        }
+    }
+
+    @media only screen and (max-width:1024px) {
+        .navbar-nav > li {
+            margin: 0 35px;
+        }
+
+        .top-left span {
+            font-size: 13px;
+        }
+
+        .top-right ul {
+            padding: 0px;
+        }
+
+        .inner-wrapper {
+            width: 90%;
+        }
+
+        .footer-bottom {
+            padding: 0px;
+        }
+
+        .dynamic-img {
+            width: 450px;
+        }
+
+        .navbar-nav1 > li {
+            margin: 0 10px !important;
+        }
+
+        .size-popup {
+            width: 100%;
+            padding: 6px;
+            overflow: hidden;
+        }
+
+        .ingredients_option {
+            padding: 0px;
+        }
+
+            .ingredients_option ul.select_btn li a {
+                margin: 0 5px;
+                padding: 1em 5px;
+            }
+
+            .ingredients_option ul.select_btn li {
+                margin: 0px;
+                padding: 15px;
+            }
+
+        .header {
+            width: 82%;
+        }
+
+        #cart .modal-lg {
+            width: 845px;
+        }
+
+        .cart_info {
+            top: 9em;
+        }
+    }
+
+
+    @media only screen and (max-width:980px) {
+        .navbar-nav > li {
+            margin: 0 15px;
+        }
+
+        .inner-wrapper {
+            width: 100%;
+        }
+
+        .register-div {
+            padding: 2em 0px;
+        }
+
+        .footer-bottom {
+            padding: 1em 2em;
+        }
+
+            .footer-bottom .contact-phone {
+                margin-left: 3em;
+            }
+
+        .footer-top-right {
+            margin-left: 3em;
+        }
+
+        .top-left span.fax {
+            float: left;
+            margin-left: 10px;
+        }
+
+        .message-section {
+            padding: 0 0em;
+        }
+
+        .dynamic-img {
+            width: 385px;
+        }
+
+        .product_desc input {
+        }
+
+        /*.ingredients_option .btn-div {
+            padding: 2em;
+        }*/
+
+        .header .top-bar {
+            padding: 0px 0px;
+        }
+
+        .header {
+            width: 75%;
+            height: 135px;
+        }
+
+            .header .navbar-brand img {
+                width: 80px;
+                height: 120px;
+                top: -2.5em;
+                right: -1em;
+            }
+
+            .header .navbar-nav1 > li {
+                margin: 0px 10px !important;
+            }
+
+        .order-online {
+            margin-top: 180px;
+        }
+
+        #cart .modal-lg {
+            width: 725px;
+        }
+
+        #cart .modal-lg {
+            top: 8.3em;
+        }
+
+        #ingredient_list .additional_comments #txtComment {
+            width: 72%;
+        }
+
+        .category_details .table th {
+            width: 48%;
+        }
+
+        .cart_info {
+            top: 5em;
+        }
+    }
+
+    @media only screen and (min-width:768px) and (max-width:980px) {
+        .navbar-nav1 > li {
+            margin: 0 !important;
+        }
+    }
+
+
+    @media only screen and (max-width:800px) {
+        .navbar-nav > li {
+            margin: 0 10px;
+        }
+
+        .register-div {
+            padding: 1em 0px;
+        }
+
+        .form-group input[type="text"], .form-group input[type="email"], .form-group input[ type="password"], .form-group textarea {
+            width: 70%;
+        }
+
+        .form-group label {
+            width: 30%;
+        }
+
+        .form-group select {
+            width: 70%;
+        }
+
+        .span_1_of_2 {
+            width: 35%;
+        }
+
+            .span_1_of_2 select, .span_1_of_2 input[ type="password"] {
+                width: 99%;
+            }
+
+        .top-right {
+            margin: 3em 0 0 0;
+            overflow: hidden;
+        }
+
+        ul.social-icons {
+            padding: 0px;
+        }
+
+        .login-div {
+            margin-left: 5.2em;
+        }
+
+        .navbar-nav > li > a {
+            font-size: 17px;
+        }
+
+        .inner-wrapper {
+            width: 90%;
+        }
+
+        #regiter-form {
+            margin: 2em;
+        }
+
+        .dynamic-img {
+            width: 350px;
+        }
+
+        /*.ingredients_option .btn-div {
+            padding: 2em 0em;
+        }*/
+
+        .ing_details .col-md-4 {
+            padding: 0px !important;
+        }
+
+        .customer-info .form-group label {
+            font-size: 15px;
+        }
+
+        .header .navbar-nav1 > li {
+            margin: 0px !important;
+        }
+
+        .header {
+            width: 82%;
+            height: 160px;
+        }
+
+        .order-online {
+            margin-top: 220px;
+        }
+
+        .header .col-md-8 {
+            padding: 0px;
+        }
+
+        .login-div {
+            margin-left: 0.2em;
+        }
+
+        #cart .modal-lg {
+            width: 655px;
+        }
+
+        #cart .modal-lg {
+            top: 10.2em;
+        }
+
+        .register-div .span_1_of_2 select, .register-div .span_1_of_2 input[type="password"] {
+            width: 99%;
+        }
+
+        .register-div .span_1_of_2 select {
+            width: 68%;
+        }
+
+        .ingredients_option .btn-div {
+            width: 100%;
+        }
+
+        .category_details .table td {
+            font-size: 12px;
+            padding: 5px 0px;
+        }
+
+        .category_details .table th {
+            font-size: 12px;
+        }
+
+        .cart_info {
+            top: 9em;
+        }
+    }
+
+
+    @media only screen and (max-width:768px) {
+        .header {
+            width: 85%;
+        }
+    }
+
+
+    @media only screen and (max-width:640px) {
+        .navbar-toggle {
+            float: left !important;
+        }
+
+        .login-div {
+            padding: 0px;
+            margin: -2px;
+        }
+
+        .navbar-nav {
+            width: 90% !important;
+        }
+
+        .navbar-header {
+            background: rgb(23, 28, 34) none repeat scroll 0% 0%;
+            position: relative;
+            z-index: 999;
+        }
+
+        .navbar-nav > li {
+            margin: 1em 2em 1em 0px;
+        }
+
+        .submit-btn {
+            width: 60%;
+        }
+
+        .copyright-section, .message-section, .privacy-section {
+            width: 100%;
+            float: left;
+            padding: 0px;
+            text-align: left;
+        }
+
+            .privacy-section ul {
+                text-align: left;
+                float: left;
+                margin-left: -8px;
+            }
+
+        .top-slider .col-md-4 {
+            padding: 0px !important;
+        }
+
+        .dynamic-img {
+            width: 600px;
+            margin-top: 10px;
+        }
+
+        .ingredients_option {
+            padding: 1.5em 0px;
+        }
+
+            .ingredients_option ul.select_btn li a {
+                margin: 0 5px;
+            }
+
+        .product_summary .product_desc {
+            width: 80%;
+            float: left;
+        }
+
+        .product_summary .cart_info {
+            width: 20%;
+            float: left;
+        }
+
+        .list-group-item .selected_prdct {
+            width: 40%;
+            float: left;
+        }
+
+        .list-group-item .price_prdct, .list-group-item .product_quantity {
+            width: 20%;
+            float: left;
+        }
+
+        .product_desc input {
+            right: 0px;
+        }
+
+        .my_cart {
+            margin-top: 2em;
+        }
+
+        .affix {
+            top: 0;
+            width: 86%;
+        }
+
+        .header {
+            position: static;
+            height: auto;
+            float: none;
+            width: 100%;
+        }
+
+        .order-online {
+            margin-top: 10px;
+        }
+
+        #cart {
+            float: left;
+        }
+
+        #ing_spec .extra-ing-list {
+            width: 100%;
+        }
+
+        .cart_info {
+            top: 13em;
+            right: 4em;
+        }
+
+        .header .navbar-brand img {
+            top: -7.5em;
+        }
+    }
+
+    @media only screen and (max-width:480px) {
+        .copyright-section, .message-section, .privacy-section {
+            width: 100%;
+            text-align: left;
+        }
+
+        .footer-top-right {
+            margin-left: 0px;
+        }
+
+        #regiter-form {
+            margin: 5px;
+        }
+
+        .registration-page {
+            padding: 5px;
+        }
+
+        .form-group input[type="text"], .form-group input[type="email"], .form-group input[ type="password"], .form-group textarea {
+            width: 100%;
+        }
+
+        /*.top-left span.fax {
+            margin-left: 11em;
+        }*/
+        .top-left span.fax {
+            float: right;
+        }
+
+        ul.login-div li a span {
+            margin: 0px;
+        }
+
+        .form-group select {
+            width: 100%;
+        }
+
+        .submit-btn {
+            width: 100%;
+        }
+
+        .span_1_of_2 {
+            width: 50%;
+        }
+
+        .form-group select {
+            width: 99%;
+        }
+
+        .bottom-section {
+            padding: 1em;
+        }
+
+        .footer-bottom .contact, .footer-bottom .contact-phone {
+            width: 100%;
+        }
+
+        .dynamic-img {
+            width: 400px;
+        }
+
+        .ingredients_option ul.select_btn li a {
+            width: 120px;
+            display: block;
+            margin: 0px;
+            text-align: center;
+            margin-left: -45px;
+        }
+
+        .product_desc input {
+            width: 50px;
+        }
+
+        .customer-info form {
+            padding: 2em 1em;
+        }
+
+        .customer-info {
+            padding: 1em 0px;
+        }
+
+        .ingredients_option ul.select_btn li {
+            margin: 4px;
+            padding: 0px;
+        }
+
+        #cart .modal-lg {
+            width: 408px;
+            margin: 0 auto;
+        }
+
+        .product_charges .apply_btn {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .order-online .my_cart .product_detail span.tax_value {
+            width: 20%;
+        }
+
+        .order-online .product_charges span {
+            width: 80%;
+        }
+
+        .customer-info .form-group select, .customer-info .form-group input[type="text"], .customer-info .form-group input[type="email"], .customer-info .form-group input[type="password"], .customer-info .form-group textarea {
+            width: 100% !important;
+        }
+
+        .customer-info .form-group label {
+            width: 100%;
+        }
+
+        .customer-info .form-group .span_1_of_2 {
+            width: 50%;
+        }
+
+        .register-div .form-group label {
+            width: 100%;
+            margin-bottom: 0px;
+        }
+
+        .register-div .form-group input[type="text"], .register-div .form-group input[type="email"], .register-div .form-group input[type="password"], .register-div .form-group textarea, .register-div .password-section {
+            width: 100%;
+        }
+
+        .offer_subscribe_section, .offer_heading {
+            float: left;
+            width: 100%;
+        }
+
+        #subscribe_form .btn {
+            width: 30%;
+        }
+
+        .offer_heading h1 {
+            line-height: 1;
+        }
+
+        .navbar-nav > li.order {
+            width: 80%;
+        }
+    }
+
+    @media only screen and (max-width:360px) {
+        .navbar {
+            margin: 2em 0 0 0;
+        }
+
+        .top-left span {
+            font-size: 12px;
+        }
+
+        .top-right ul {
+            padding: 0px;
+        }
+
+        .top-right {
+            margin: 5px;
+            float: left;
+        }
+
+        .navbar-brand img {
+            top: -4em;
+            right: -1em;
+            height: 170px;
+            width: 100px;
+        }
+
+        .inner-wrapper {
+            width: 100%;
+        }
+
+        ul.login-div li a span {
+            margin: 0px;
+        }
+
+        .address-footer {
+            padding: 0 0em;
+        }
+
+        .register-div {
+            padding: 1em 0px;
+        }
+
+        .message-section {
+            padding: 0px;
+        }
+
+        .inner-wrapper {
+            width: 100%;
+        }
+
+        .top-left span.fax {
+            margin-left: 6em;
+            margin-right:38px;
+        }
+
+        .span_1_of_2 {
+            width: 100%;
+        }
+
+            .span_1_of_2 select, .span_1_of_2 input[ type="password"] {
+                margin-bottom: 5px;
+            }
+
+        .product_desc input {
+            margin: 0px;
+        }
+
+        .list-group-item .selected_prdct {
+            width: 100%;
+        }
+
+        .affix {
+            margin: 0px !important;
+        }
+
+        .login-div {
+            width: 100%;
+        }
+
+            .login-div .dropdown {
+                margin-left: 3em;
+            }
+
+        #cart .modal-lg {
+            width: 300px;
+            margin: 0 auto;
+            top: 6.3em;
+        }
+
+        .offers-section .modal-dialog {
+            margin-top: 2em !important;
+        }
+
+        #ingredient_list .additional_comments #txtComment {
+            width: 100%;
+        }
+
+        .category_details .table td {
+            font-size: 11px;
+            padding: 5px 0px;
+        }
+
+        .category_details .table th {
+            font-size: 12px;
+        }
+
+        .cart_info {
+            top: 14em;
+            right: 2em;
+        }
+    }
+
+    @media only screen and (max-width:320px) {
+        .top-left span.fax {
+            margin-left: 3em;
+        }
+
+        .navbar-nav > li.order a {
+            padding: 10px 24px;
+        }
+
+        .navbar-nav > li > a {
+            font-size: 16px;
+        }
+    }
+
+    @media only screen and (max-width:360px) {
+
+        .register-div .span_1_of_2 select {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width:480px) {
+
+        .register-div .span_1_of_2 select {
+            width: 100%;
+        }
+
+        .span_1_of_2 {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width:480px) {
+        #ingredient_list .add_cart {
+            padding: 0.6em;
+        }
+    }
+
+    @media only screen and (max-width:360px) {
+
+        .register-div .span_1_of_2 select {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width:360px) {
+        #ingredient_list .add_cart {
+            float: left;
+        }
+    }
+
+    @media only screen and (min-width:982px) and (max-width:1200px) {
+        #ingredient_list .add_cart {
+            float: left;
+        }
+    }
+}
+
+.LiLogin {
+    margin-left: 0px;
+}
+
+.liReg {
+    margin-left: 0px;
+}
+
+@media only screen and (max-width:304px) {
+    .LiLogin {
+        margin-left: 5px;
+    }
+
+    .liReg {
+        margin-left: -15px;
+    }
+}

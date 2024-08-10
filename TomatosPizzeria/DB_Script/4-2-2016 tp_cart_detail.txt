@@ -1,0 +1,7 @@
+ALTER TABLE [dbo].[tp_cart_detail]
+    ADD [cd_comment] NVARCHAR (500) NULL;
+
+
+
+ALTER TABLE [dbo].[tp_cart_detail] ALTER COLUMN [cd_comment] NVARCHAR (MAX) NULL;
+

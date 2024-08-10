@@ -1,0 +1,14 @@
+GO
+PRINT N'Rename [dbo].[tp_order_product_ingredients_mapping].[opm_pd_id] to opim_pd_id';
+
+
+GO
+EXECUTE sp_rename @objname = N'[dbo].[tp_order_product_ingredients_mapping].[opm_pd_id]', @newname = N'opim_pd_id', @objtype = N'COLUMN';
+
+
+GO
+PRINT N'Rename [dbo].[tp_order_product_ingredients_mapping].[opm_id_id] to opim_id_id';
+
+
+GO
+EXECUTE sp_rename @objname = N'[dbo].[tp_order_product_ingredients_mapping].[opm_id_id]', @newname = N'opim_id_id', @objtype = N'COLUMN';

@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer-Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <style>
+        h1, h2, h3 {
+            font-weight: normal;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        h3 {
+            font-size: 16px;
+        }
+
+        a, a:hover {
+            text-decoration: none;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        td {
+            background: #ffffff;
+        }
+
+        .pdf_btn {
+        }
+
+        @media only screen and (min-device-width: 640px) {
+            body {
+                width: 600px;
+                margin: 0 auto;
+            }
+
+            .bottom {
+                padding: 1em;
+            }
+        }
+
+        @media only screen and (min-device-width: 768px) {
+            .wrapper {
+                width: 600px;
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-device-width: 640px) {
+            .wrapper {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media only screen and (max-device-width: 320px) {
+            .table-responsive {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body style="font-family:Geneva, Arial, Helvetica, sans-serif; margin:0 auto;">
+
+    <div class="wrapper" style="background:rgb(248, 248, 248); margin:0 auto; overflow:hidden;text-align:center;">
+
+        <center>
+            <a href="" style="text-decoration: none;"><img src="http://3deemingsolutions.com/pizzeria/images/logo.png" style="width:100px; margin:0 auto;" title="logo" /></a>
+
+            <div class="address">
+                <h2 style="font-size: 16px;">Tomato's Pizza</h2>
+
+                <h4 style="font-size: 14px;">720 W. Irving Park Road,<br />Bensenville, IL 60106</h4>
+                <h4 style="font-size: 14px;">$$ComapnyPhone$$</h4>
+            </div>
+
+            <div class="order-details">
+                <h4 style="color:#d61717">ORDER NUMBER: $$OrderNumber$$</h4>Order placed on $$OrderDate$$
+                <h1 style="font-weight: normal;font-size: 20px;">$$OrderFor$$ Order for $$OrderWishTime$$</h1>
+                <!--<h2 style="font-size: 18px;">PIN: 4086</h2>-->
+            </div>
+
+            <!--<div class="delivery-order">
+                <h1 style="font-weight: normal;font-size: 20px;">DELIVERY Order for $$OrderWishTime$$</h1>
+                <h3 style="font-size: 16px;">Order placed on $$OrderDate$$</h3>
+            </div>-->
+            <div id="client_name"><h1 style="color:#26752A;font-size: 20px;">$$CustomerName$$</h1></div>
+            <div id="contact" style="font-size:16px;"><strong>$$CustomerTelephone$$</strong></div>
+            <div id="client_address" style="font-size:16px;">
+                <strong>
+                    $$CustomerAddress$$
+                </strong>
+            </div><br />
+            <div id="client_address" style="font-size:14px;">
+                <strong>
+                    Delivery Instructions:$$DeliveryInstruction$$
+                </strong>
+            </div>
+        </center>
+
+        <!--<div class='table-responsive'>
+            <table border='0' style='border:none;width:100%; text-align:left; table-layout:auto;border-collapse: collapse;'>
+                <tbody>
+                    <tr>
+                        <td valign="top" width="15%">
+                            <strong>$$CustomerName$$</strong>
+                            <strong>Contact No:$$CustomerTelephone$$<br />$$CustomerAddress$$</strong>
+                        </td>
+                        <td valign="top">
+                            <strong>Delivery Instructions:$$DeliveryInstruction$$</strong>
+                        </td>
+                    </tr>                    
+                </tbody>
+            </table>
+        </div>-->
+
+        <!--<div class="table-responsive" >
+            <table border='0' style='padding:5px; float:left;display:inline-block;border:none;width:50%; text-align:left; table-layout:auto;border-collapse: collapse;'>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p style='color:#26752A;font-size: 14px;'><strong>Customer Name:$$CustomerName$$</strong> </p>
+                            <br /><strong>Contact No:$$CustomerTelephone$$<br />Customer Address:$$CustomerAddress$$</strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table border='0' style='padding:5px; float:right;display:inline-block;border:none;width:50%; text-align:left; table-layout:auto;border-collapse: collapse;'>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong >Delivery Instructions:$$DeliveryInstruction$$</strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>-->
+    </div>
+</body>
+</html>

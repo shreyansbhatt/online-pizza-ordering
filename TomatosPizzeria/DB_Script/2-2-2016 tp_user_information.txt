@@ -1,0 +1,4 @@
+
+ALTER TABLE [dbo].[tp_user_information]
+    ADD  [pd_sd_id]  INT   NULL
+        

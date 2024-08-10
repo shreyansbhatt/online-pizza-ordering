@@ -1,0 +1,28 @@
+CREATE TABLE [dbo].[tp_user_information] (
+    [ui_id]           INT            IDENTITY (1, 1) NOT NULL,
+    [ui_seqno]        NVARCHAR (100) NOT NULL,
+    [ui_userName]     NVARCHAR (100) NULL,
+    [ui_email]        NVARCHAR (100) NULL,
+    [ui_password]     NVARCHAR (100) NULL,
+    [ui_mobile]       INT            NULL,
+    [ui_telephone]    INT            NULL,
+    [ui_country_id]   INT            NULL,
+    [ui_state_id]     INT            NULL,
+    [ui_city]         NVARCHAR (100) NULL,
+    [ui_pincode]      INT            NULL,
+    [ui_usertype]     INT            NULL,
+    [ui_gender]       INT            NULL,
+    [ui_addressLine1] NVARCHAR (100) NULL,
+    [ui_addressLine2] NVARCHAR (100) NULL,
+    [ui_street]       NVARCHAR (100) NULL,
+    [ui_house_no]     NVARCHAR (100) NULL,
+    [ui_isdeleted]    BIT            NULL,
+    [createdby]       INT            NULL,
+    [modifiedby]      INT            NULL,
+    [createdon]       DATETIME       NULL,
+    [modifiedon]      DATETIME       NULL,
+    CONSTRAINT [PK_tp_user_information] PRIMARY KEY CLUSTERED ([ui_id] ASC)
+);
+------------------------------------------------------------------------------------------
+[ui_userName]     NVARCHAR(100)  NULL,
+[ui_city]         NVARCHAR (100) NULL,

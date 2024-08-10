@@ -1,0 +1,7 @@
+ALTER TABLE [dbo].[tp_product_details]
+    ADD  [pd_sd_id]  INT   NULL
+
+ALTER TABLE [dbo].[tp_product_details] ALTER COLUMN [pd_base_price] NVARCHAR (100) NULL;
+
+ALTER TABLE [dbo].[tp_product_details] ALTER COLUMN [pd_description1] NVARCHAR (MAX) NULL;
+        

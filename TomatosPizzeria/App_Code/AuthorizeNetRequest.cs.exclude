@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+/// <summary>
+/// Summary description for AuthorizeNetRequest
+/// </summary>
+public class AuthorizeNetRequest
+{
+    public AuthorizeNetRequest()
+    {
+        //
+        // TODO: Add constructor logic here
+        //
+    }
+    #region Private Member(s)
+    private string mstrLogin;
+    private decimal mdblAmount;
+    private string mstrTransactionKey;
+    private string mstrCardNumber;
+    private string mstrCardExpirationDate;
+    private AuthorizeNet.TransactionType enmTransactionType;
+    private string mstrTransactionId;
+    #endregion
+
+    #region Public Propertie(s)
+    public string TransactionId
+    {
+        get { return mstrTransactionId; }
+        set { mstrTransactionId = value; }
+    }
+
+
+    public string CardNumber
+    {
+        get { return mstrCardNumber; }
+        set { mstrCardNumber = value; }
+    }
+
+
+    public decimal Amount
+    {
+        get { return mdblAmount; }
+        set { mdblAmount = value; }
+    }
+
+
+    public string Login
+    {
+        get { return mstrLogin; }
+        set { mstrLogin = value; }
+    }
+
+    public string CardExpirationDate
+    {
+        get { return mstrCardExpirationDate; }
+        set { mstrCardExpirationDate = value; }
+    }
+
+    public string TransactionKey
+    {
+        get { return mstrTransactionKey; }
+        set { mstrTransactionKey = value; }
+    }
+
+    public AuthorizeNet.TransactionType TransactionType
+    {
+        get { return enmTransactionType; }
+        set { enmTransactionType = value; }
+    }
+    #endregion
+}

@@ -1,0 +1,105 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Test.aspx.cs" Inherits="Test" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <input type="hidden" name="x_type" value="CREDIT" />
+        <input type="hidden" name="x_trans_id" value="" />
+    <input type="hidden" name="x_card_num" value="0028" />
+
+        <asp:Label ID="lblMessage" runat="server"></asp:Label>
+        <asp:Label ID="lblTransType" runat="server"></asp:Label>
+         <div>
+                                    <label>
+                                        Credit Card Number
+                                    <abbr class="required-field" title="required">*</abbr></label>
+                                    <%--<input type="text" required class="col-md-4">--%>
+                                    <asp:TextBox ID="txtCreditCardNumber" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-8">
+                                    <div class="span_1_of_2">
+                                        <label>
+                                            Expiration Date
+                                        <abbr class="required-field" title="required">*</abbr>
+                                        </label>
+                                        <asp:DropDownList ID="DdlMonth" runat="server" class="span_1_of_2" AutoPostBack="false" AppendDataBoundItems="True" Height="28px">
+                                            <asp:ListItem Value="-1">Month</asp:ListItem>
+                                            <asp:ListItem>01</asp:ListItem>
+                                            <asp:ListItem>02</asp:ListItem>
+                                            <asp:ListItem>03</asp:ListItem>
+                                            <asp:ListItem>04</asp:ListItem>
+                                            <asp:ListItem>05</asp:ListItem>
+                                            <asp:ListItem>06</asp:ListItem>
+                                            <asp:ListItem>07</asp:ListItem>
+                                            <asp:ListItem>08</asp:ListItem>
+                                            <asp:ListItem>09</asp:ListItem>
+                                            <asp:ListItem>10</asp:ListItem>
+                                            <asp:ListItem>11</asp:ListItem>
+                                            <asp:ListItem>12</asp:ListItem>
+                                        </asp:DropDownList>
+                                        <%--<select class="span_1_of_2">
+                                            <option selected="selected">Month</option> 
+						                    <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                        </select>--%>
+                                        <asp:DropDownList ID="DdlYear" runat="server" class="span_1_of_2 pull-right" AutoPostBack="false" AppendDataBoundItems="True" Height="28px">
+                                            <asp:ListItem Value="-1">Year</asp:ListItem>
+                                            <asp:ListItem>2016</asp:ListItem>
+                                            <asp:ListItem>2017</asp:ListItem>
+                                            <asp:ListItem>2018</asp:ListItem>
+                                            <asp:ListItem>2019</asp:ListItem>
+                                            <asp:ListItem>2020</asp:ListItem>
+                                            <asp:ListItem>2021</asp:ListItem>
+                                            <asp:ListItem>2022</asp:ListItem>
+                                            <asp:ListItem>2023</asp:ListItem>
+                                            <asp:ListItem>2024</asp:ListItem>
+                                            <asp:ListItem>2025</asp:ListItem>
+                                            <asp:ListItem>2026</asp:ListItem>
+
+                                        </asp:DropDownList>
+                                        <%--<select class="span_1_of_2 pull-right">
+                                          <option selected="selected">Year </option>
+						                    <option>2016</option>
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                            <option>2020</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                            <option>2023</option>
+                                            <option>2024</option>
+                                            <option>2025</option>
+                                            <option>2026</option>
+                                          
+                                        </select>  --%>
+                                    </div>
+                                    <div class="span_1_of_2 pull-right">
+                                        <label>
+                                            Amount
+                                        <abbr class="required-field" title="required">*</abbr></label>
+                                        <%-- <input type="text">--%>
+                                        <asp:TextBox ID="txtAmount" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+        <asp:Button ID="btnPay" runat="server" Text="Pay Now"  OnClick="btnPay_Click" />
+    </div>
+    </form>
+</body>
+</html>

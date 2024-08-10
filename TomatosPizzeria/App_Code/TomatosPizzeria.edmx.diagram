@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cc00e618b1964bbeb45ec6733c532320" Name="Diagram1">
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_billing_detail" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_cart_detail" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_city" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_config" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_country" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_customer_order_details" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_dailyspecials_offer" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_dollars_offer" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_feast_forfive_offer" Width="1.5" PointX="8.75" PointY="5.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_free_pizza_offer" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_ingredient_category_mapping" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_ingredient_details" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_ingredient_product_mapping" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_ingredients_product_size_mapping" Width="1.5" PointX="6.75" PointY="11.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_newsletter_information" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_offer_master" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_order_product_ingredients_specification" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_order_product_mapping" Width="1.5" PointX="8.75" PointY="12.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_pizza_base_type" Width="1.5" PointX="10.75" PointY="12.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_product_category" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_product_ingredient_fact_detail" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_product_making_method" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_product_properties" Width="1.5" PointX="14.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_product_sizes" Width="1.5" PointX="14.75" PointY="13.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_state" Width="1.5" PointX="4.75" PointY="15.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_store_details" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_store_working_mapping" Width="1.5" PointX="16.75" PointY="5.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_transaction_detail" Width="1.5" PointX="6.75" PointY="16.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_user_information" Width="1.5" PointX="16.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_working_days" Width="1.5" PointX="8.75" PointY="16.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_product_details" Width="1.5" PointX="11.375" PointY="16.75" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_product_ingredient_fact_mapping" Width="1.5" PointX="2.875" PointY="14.125" />
+        <EntityTypeShape EntityType="TP_DatabaseModel.tp_cart_ingredient_mapping" Width="1.5" PointX="0.75" PointY="17.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

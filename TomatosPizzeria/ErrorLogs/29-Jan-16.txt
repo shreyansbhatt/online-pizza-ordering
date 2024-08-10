@@ -1,0 +1,270 @@
+
+Log Entry : 01/29/2016 10:49:31
+Inner Exception : 
+File Name : 
+Line : 0
+Column: 0
+Error Message: Value was either too large or too small for an Int32.
+Source: mscorlib
+StackTrace:    at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at UserRegistration.btnRegister_Click(Object sender, EventArgs e) in d:\TomatosPizzeria\TomatosPizzeria\UserRegistration.aspx.cs:line 54
+TargetSite:Int32 ParseInt32(System.String, System.Globalization.NumberStyles, System.Globalization.NumberFormatInfo)
+__________________________
+
+Log Entry : 01/29/2016 13:46:24
+Inner Exception : 
+File Name : 
+Line : 0
+Column: 0
+Error Message: This property cannot be set to an empty string.
+Parameter name: value
+Source: System
+StackTrace:    at System.Net.Mail.SmtpClient.set_Host(String value)
+   at ClsUserInformation.SendMail(String toadd, String subject, String body, String attachment, String ccaddress, Int32 status, String link) in d:\TomatosPizzeria\TomatosPizzeria\App_Code\ClsUserInformation.cs:line 754
+TargetSite:Void set_Host(System.String)
+__________________________
+
+Log Entry : 01/29/2016 13:50:56
+Inner Exception : 
+File Name : 
+Line : 0
+Column: 0
+Error Message: This property cannot be set to an empty string.
+Parameter name: value
+Source: System
+StackTrace:    at System.Net.Mail.SmtpClient.set_Host(String value)
+   at ClsUserInformation.SendMail(String toadd, String subject, String body, String attachment, String ccaddress, Int32 status, String link) in d:\TomatosPizzeria\TomatosPizzeria\App_Code\ClsUserInformation.cs:line 754
+TargetSite:Void set_Host(System.String)
+__________________________
+
+Log Entry : 01/29/2016 16:06:01
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 89
+Column: 13
+Error Message: Index was outside the bounds of the array.
+Source: App_Web_dy1zrr1t
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 89
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 16:13:40
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 89
+Column: 13
+Error Message: Index was outside the bounds of the array.
+Source: App_Web_js35tdoo
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 89
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 16:24:46
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 96
+Column: 13
+Error Message: Index was outside the bounds of the array.
+Source: App_Web_js0xu1nz
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 96
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 16:25:21
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 96
+Column: 13
+Error Message: Index was outside the bounds of the array.
+Source: App_Web_js0xu1nz
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 96
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 16:28:15
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 96
+Column: 13
+Error Message: Index was outside the bounds of the array.
+Source: App_Web_tob5lezk
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 96
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 16:28:30
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_dtymynoh
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 16:29:34
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 96
+Column: 13
+Error Message: Index was outside the bounds of the array.
+Source: App_Web_dtymynoh
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 96
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:24:43
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_kgwzwrk0
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:25:21
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_4i44dqjz
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:26:06
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_vbu4iicn
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:26:38
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_dzl4k2pa
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:27:22
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_gdh11zq2
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:27:48
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_ao2kfb2q
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:28:25
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_kybj3mma
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:28:46
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_0swmtbxq
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:29:30
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_0pvqosue
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:30:24
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_ckaxixyj
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:31:51
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_2ywj43ii
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:32:35
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_focjf1s2
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 17:33:06
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_fu11ho3x
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________
+
+Log Entry : 01/29/2016 18:04:48
+Inner Exception : 
+File Name : d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs
+Line : 82
+Column: 13
+Error Message: Object reference not set to an instance of an object.
+Source: App_Web_vlkdrtcp
+StackTrace:    at EditProfile.FillUserDetails() in d:\TomatosPizzeria\TomatosPizzeria\EditProfile.aspx.cs:line 82
+TargetSite:Void FillUserDetails()
+__________________________

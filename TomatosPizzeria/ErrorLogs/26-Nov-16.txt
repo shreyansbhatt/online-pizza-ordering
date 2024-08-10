@@ -1,0 +1,42 @@
+
+Log Entry : 11/26/2016 12:55:11
+Inner Exception : 
+File Name : 
+Line : 0
+Column: 0
+Error Message: Input string was not in a correct format.
+Source: mscorlib
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at OrderOnline.rptSize_ItemCommand(Object source, RepeaterCommandEventArgs e) in d:\DEV1\PRJ_Tomatos Pizzeria\TomatosPizzaDev\TomatosPizzeria\OrderOnline.aspx.cs:line 848
+TargetSite:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+__________________________
+
+Log Entry : 11/26/2016 12:56:35
+Inner Exception : 
+File Name : 
+Line : 0
+Column: 0
+Error Message: Input string was not in a correct format.
+Source: mscorlib
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at OrderOnline.rptSize_ItemCommand(Object source, RepeaterCommandEventArgs e) in d:\DEV1\PRJ_Tomatos Pizzeria\TomatosPizzaDev\TomatosPizzeria\OrderOnline.aspx.cs:line 848
+TargetSite:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+__________________________
+
+Log Entry : 11/26/2016 12:56:49
+Inner Exception : 
+File Name : 
+Line : 0
+Column: 0
+Error Message: Input string was not in a correct format.
+Source: mscorlib
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at OrderOnline.rptSize_ItemCommand(Object source, RepeaterCommandEventArgs e) in d:\DEV1\PRJ_Tomatos Pizzeria\TomatosPizzaDev\TomatosPizzeria\OrderOnline.aspx.cs:line 848
+TargetSite:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+__________________________

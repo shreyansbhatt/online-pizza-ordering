@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+/// <summary>
+/// Summary description for AuthorizeNetResponse
+/// </summary>
+public class AuthorizeNetResponse
+{
+    public AuthorizeNetResponse()
+    {
+        //
+        // TODO: Add constructor logic here
+        //
+    }
+    private string mstrTransactionId;
+    private string mlstErrors;
+    private string mlstSuccessMessage;
+
+    public string SuccessMessage
+    {
+        get { return mlstSuccessMessage; }
+        set { mlstSuccessMessage = value; }
+    }
+
+    private bool mblnIsSuccess;
+
+    public bool IsSuccess
+    {
+        get { return mblnIsSuccess; }
+        set { mblnIsSuccess = value; }
+    }
+
+
+    public string Errors
+    {
+        get { return mlstErrors; }
+        set { mlstErrors = value; }
+    }
+
+
+    public string TransactionId
+    {
+        get { return mstrTransactionId; }
+        set { mstrTransactionId = value; }
+    }
+
+}

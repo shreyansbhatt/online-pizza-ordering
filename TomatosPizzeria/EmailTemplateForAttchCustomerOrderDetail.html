@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js'></script>
+    <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+</head>
+<body style='font-family:Geneva, Arial, Helvetica, sans-serif;width:600px;'>
+    <div class='wrapper' style='background:rgb(248, 248, 248);overflow:hidden;width:600px;text-align:center;'>
+      
+        <center>
+
+            <div class='address'>
+                <center>
+                    <h2 style='font-size: 16px;'><b>Tomato's Pizza<br /><br />$$ComapnyAddress$$<br />$$ComapnyPhone$$</b></h2>
+                    <!--<h4 style='font-size: 14px;'><b></b></h4>-->
+                    <!--<h4><b>(630) 766-2221</b></h4>-->
+                    <h4 style='color:#d61717;text-align:center'>
+                        <b>ORDER NUMBER:$$OrderNumber$$</b><br /><h4 style="color:black;">Order placed on $$OrderDate$$</h4><h4 style="color:black;"><b>DELIVERY Order for $$OrderWishTime$$</b></h4>
+                    </h4>    
+                </center>
+              
+            </div>
+            <div class="container-name">
+                <div class="div1" style="float:left;display: inline;width:49%;">
+                    <strong style='color: #26752A; font-size: 14px;'>$$CustomerName$$</strong><br /><strong>
+                        Contact No:$$CustomerTelephone$$<br />
+                        $$CustomerAddress$$
+                    </strong>
+                </div>
+                <div class="div2" style="float:right;display: inline;width:49%;"><strong>Delivery Instructions: $$DeliveryInstruction$$</strong></div>
+            </div>
+                <!--<h1 style='color:#26752A;font-size: 20px;text-align-last:center;'>
+                    <b>$$CustomerName$$</b>
+
+                    <h4 style='color:black;'>
+
+                        <b><strong>$$CustomerTelephone$$</strong></b><br />
+                        <b><strong>$$CustomerAddress$$</strong></b>
+
+                    </h4>
+                </h1>-->
+         
+            <!--<center>
+                <div id='contact' style='font-size:16px;color:#26752a'></div>
+            </center>
+            <div id='client_address' style='font-size:16px;'>
+                <center> </center>-->
+        </center>
+    </div>
+    <center>
+        <div class='table-responsive' style='margin-top:-20px;'>
+
+            <table border='1' bordercolor='#4B924E' style=' border:1px solid #4B924E;width:100%; text-align:left;border-color:#4B924E;border-width:1px;' table-layout:auto;border-collapse: collapse;'>
+                <thead style='background-color:#4B924E;color: #ffffff;'>
+                    <tr style='background-color:#4B924E;color: #ffffff;text-align:center;'>
+                        <th style='padding: 10px;background-color:#4B924E;text-align:left'>ITEM</th>
+                        <th style='padding: 10px;background-color:#4B924E;'>QTY</th>
+                        <th style='padding: 10px;background-color:#4B924E;text-align:right'>PRICE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    $$ITEMS$$
+                    <tr style="text-align:right;"><td style='padding: 10px;background: #ffffff;'></td><td style='padding: 10px;background: #ffffff;text-align:right;'>Subtotal:</td><td style='padding: 10px;background: #ffffff;'>{Subtotal}</td></tr>
+                    <tr style="text-align:right;"><td style='padding: 10px;background: #ffffff;'></td><td style='padding: 10px;background: #ffffff;text-align:right;'>Delivery:</td><td style='padding: 10px;background: #ffffff;'>{DeliveryCharge}</td></tr>
+                    <tr style="text-align:right;"><td style='padding: 10px;background: #ffffff;'></td><td style='padding: 10px;background: #ffffff;text-align:right;'>Tax:</td><td style='padding: 10px;background: #ffffff;'>{TaxDetail}</td></tr>
+                    <tr style="text-align:right;"><td style='padding: 10px;background: #ffffff;'></td><td style='padding: 10px;background: #ffffff;text-align:right;'>Discount:</td><td style='padding: 10px;background: #ffffff;'>{Discount}</td></tr>
+                    <tr style='font-weight:600;text-align:right;'><td rowspan='2' style='padding: 10px;background: #ffffff;text-align:left;'><em>Payment Method:CREDIT  <br> ending with -$$CardNumber$$</em> <td rowspan='2' style='padding: 10px;background: #ffffff;text-align:left;'>Total:</td><td rowspan='2' style='padding: 10px;background: #ffffff;'>{TotalAmount}</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <!--<div class='contact' style='margin:10px;  border-top:1px solid #888888;border-bottom:1px solid #888888; padding:10px;'>
+            For any questions regarding this order please call MyPizza.com at $$CustomerTelephone$$.<br />Copyright © 2016 MyPizza, All rights reserved.
+            <strong> Our email address is:</strong><em style="color:blue;">$$SupportEmail$$</em>
+        </div>-->
+
+    </center>
+</body>
+</html>

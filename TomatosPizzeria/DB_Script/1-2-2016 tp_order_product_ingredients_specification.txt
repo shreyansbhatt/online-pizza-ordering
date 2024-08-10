@@ -1,0 +1,11 @@
+DROP TABLE [dbo].[tp_order_product_ingredients_mapping]
+
+
+CREATE TABLE [dbo].[tp_order_product_ingredients_specification] (
+    [opis_id]     INT IDENTITY (1, 1) NOT NULL,
+    [opis_cod_id] INT NULL,
+    [opis_pd_id]  INT NULL,
+    [opis_id_id]  INT NULL,
+    CONSTRAINT [PK_tp_order_product_ingredients_specification] PRIMARY KEY CLUSTERED ([opis_id] ASC)
+);
+

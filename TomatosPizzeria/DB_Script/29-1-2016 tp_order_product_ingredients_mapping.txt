@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[tp_order_product_ingredients_mapping] (
+    [opim_id]     INT IDENTITY (1, 1) NOT NULL,
+    [opim_cod_id] INT NULL,
+    [opim_pd_id]  INT NULL,
+    [opim_id_id]  INT NULL,
+    CONSTRAINT [PK_tp_order_product_ingredients_mapping] PRIMARY KEY CLUSTERED ([opim_id] ASC)
+);
+

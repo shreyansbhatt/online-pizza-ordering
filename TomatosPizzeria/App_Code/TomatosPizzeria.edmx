@@ -1,0 +1,1719 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TP_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tp_billing_detail">
+          <Key>
+            <PropertyRef Name="tbd_id" />
+          </Key>
+          <Property Name="tbd_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tbd_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="tbd_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="tbd_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="tbd_city" Type="nvarchar" MaxLength="50" />
+          <Property Name="tbd_state_id" Type="int" />
+          <Property Name="tbd_zipcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="tbd_telephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="tbd_delivery_instruction" Type="nvarchar(max)" />
+          <Property Name="tbd_cod_id" Type="int" />
+          <Property Name="tbd_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_cart_detail">
+          <Key>
+            <PropertyRef Name="cd_id" />
+          </Key>
+          <Property Name="cd_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cd_pi_id" Type="int" />
+          <Property Name="cd_ui_id" Type="int" />
+          <Property Name="cd_si_id" Type="int" />
+          <Property Name="cd_pp_id" Type="int" />
+          <Property Name="cd_quantity" Type="int" />
+          <Property Name="cd_takeaway_price" Type="nvarchar" MaxLength="50" />
+          <Property Name="cd_pifd_id" Type="int" />
+          <Property Name="cd_random_number" Type="nvarchar" MaxLength="150" />
+          <Property Name="cd_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="cd_comment" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tp_cart_ingredient_mapping">
+          <Key>
+            <PropertyRef Name="cim_id" />
+          </Key>
+          <Property Name="cim_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cim_cd_id" Type="int" />
+          <Property Name="cim_id_id" Type="int" />
+          <Property Name="cim_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="cim_id_price" Type="nvarchar" MaxLength="100" />
+          <Property Name="cim_fact_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tp_city">
+          <Key>
+            <PropertyRef Name="tpci_id" />
+          </Key>
+          <Property Name="tpci_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tpci_city_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="tpci_tps_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tp_config">
+          <Key>
+            <PropertyRef Name="tpc_id" />
+          </Key>
+          <Property Name="tpc_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tpc_key" Type="nvarchar" MaxLength="100" />
+          <Property Name="tpc_value" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tp_country">
+          <Key>
+            <PropertyRef Name="tpc_id" />
+          </Key>
+          <Property Name="tpc_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tpc_country_name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tp_customer_order_details">
+          <Key>
+            <PropertyRef Name="cod_id" />
+          </Key>
+          <Property Name="cod_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cod_order_number" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cod_ui_id" Type="int" />
+          <Property Name="cod_sd_id" Type="int" />
+          <Property Name="cod_order_placed_time" Type="datetime" />
+          <Property Name="cod_order_wish_time" Type="datetime" />
+          <Property Name="cod_order_actual_delivered_time" Type="datetime" />
+          <Property Name="cod_total_amount" Type="nvarchar" MaxLength="100" />
+          <Property Name="cod_order_type" Type="nvarchar" MaxLength="100" />
+          <Property Name="cod_order_status" Type="nvarchar" MaxLength="100" />
+          <Property Name="cod_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="cod_tax" Type="nvarchar" MaxLength="100" />
+          <Property Name="cod_delivery_charge" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tp_dailyspecials_offer">
+          <Key>
+            <PropertyRef Name="dso_id" />
+          </Key>
+          <Property Name="dso_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dso_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="dso_description" Type="nvarchar(max)" />
+          <Property Name="dso_Offer_code" Type="nvarchar" MaxLength="100" />
+          <Property Name="dso_day" Type="int" />
+          <Property Name="dso_product1_pd_id" Type="int" />
+          <Property Name="dso_product1_quantity" Type="int" />
+          <Property Name="dso_product1_ps_id" Type="int" />
+          <Property Name="dso_product2_pd_id" Type="int" />
+          <Property Name="dso_product2_quantity" Type="int" />
+          <Property Name="dso_product2_ps_id" Type="int" />
+          <Property Name="dso_amount" Type="nvarchar" MaxLength="100" />
+          <Property Name="dso_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="dso_start_date" Type="datetime" />
+          <Property Name="dso_end_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_dollars_offer">
+          <Key>
+            <PropertyRef Name="do_id" />
+          </Key>
+          <Property Name="do_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="do_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="do_description" Type="nvarchar(max)" />
+          <Property Name="do_offer_code" Type="nvarchar" MaxLength="100" />
+          <Property Name="do_ps_id" Type="int" />
+          <Property Name="do_amount" Type="nvarchar" MaxLength="100" />
+          <Property Name="do_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="do_start_date" Type="datetime" />
+          <Property Name="do_end_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_feast_forfive_offer">
+          <Key>
+            <PropertyRef Name="ffo_id" />
+          </Key>
+          <Property Name="ffo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ffo_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="ffo_description" Type="nvarchar(max)" />
+          <Property Name="ffo_offer_code" Type="nvarchar" MaxLength="100" />
+          <Property Name="ffo_product1_id" Type="int" />
+          <Property Name="ffo_product1_ps_id" Type="int" />
+          <Property Name="ffo_product1_quantity" Type="int" />
+          <Property Name="ffo_product2_pd_id" Type="int" />
+          <Property Name="ffo_product2_quantity" Type="int" />
+          <Property Name="ffo_product3_pd_id" Type="int" />
+          <Property Name="ffo_product3_quantity" Type="int" />
+          <Property Name="ffo_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="ffo_amount" Type="nvarchar" MaxLength="100" />
+          <Property Name="ffo_start_date" Type="datetime" />
+          <Property Name="ffo_end_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_free_pizza_offer">
+          <Key>
+            <PropertyRef Name="fpo_id" />
+          </Key>
+          <Property Name="fpo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fpo_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="fpo_description" Type="nvarchar(max)" />
+          <Property Name="fpo_offer_code" Type="nvarchar" MaxLength="100" />
+          <Property Name="fpo_free_product" Type="int" />
+          <Property Name="fpo_free_ps_id" Type="int" />
+          <Property Name="fpo_validate_product" Type="int" />
+          <Property Name="fpo_validate_ingredients" Type="int" />
+          <Property Name="fpo_validate_ps_id" Type="int" />
+          <Property Name="fpo_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="fpo_start_date" Type="datetime" />
+          <Property Name="fpo_end_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_ingredient_category_mapping">
+          <Key>
+            <PropertyRef Name="icm_id" />
+          </Key>
+          <Property Name="icm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pc_id" Type="int" />
+          <Property Name="id_id" Type="int" />
+          <Property Name="icm_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_ingredient_details">
+          <Key>
+            <PropertyRef Name="id_id" />
+          </Key>
+          <Property Name="id_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="id_description" Type="nvarchar" MaxLength="100" />
+          <Property Name="id_price" Type="nvarchar" MaxLength="100" />
+          <Property Name="id_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_ingredient_product_mapping">
+          <Key>
+            <PropertyRef Name="ipm_id" />
+          </Key>
+          <Property Name="ipm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_id" Type="int" />
+          <Property Name="pd_id" Type="int" />
+          <Property Name="iipm_isDefault" Type="bit" />
+          <Property Name="ipm_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="iipm_IsSingleIngredient" Type="bit" />
+        </EntityType>
+        <EntityType Name="tp_ingredients_product_size_mapping">
+          <Key>
+            <PropertyRef Name="ipsm_id" />
+          </Key>
+          <Property Name="ipsm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ipsm_id_id" Type="int" />
+          <Property Name="ipsm_ps_id" Type="int" />
+          <Property Name="ipsm_price" Type="nvarchar" MaxLength="100" />
+          <Property Name="ipsm_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_newsletter_information">
+          <Key>
+            <PropertyRef Name="nl_id" />
+          </Key>
+          <Property Name="nl_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nl_email" Type="nvarchar" MaxLength="100" />
+          <Property Name="nl_issubscribed" Type="bit" />
+          <Property Name="nl_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_offer_master">
+          <Key>
+            <PropertyRef Name="om_id" />
+          </Key>
+          <Property Name="om_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="om_name" Type="varchar" MaxLength="100" />
+          <Property Name="om_type" Type="int" />
+          <Property Name="om_value" Type="int" />
+          <Property Name="om_offer_code" Type="varchar" MaxLength="100" />
+          <Property Name="om_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_order_product_ingredients_specification">
+          <Key>
+            <PropertyRef Name="opis_id" />
+          </Key>
+          <Property Name="opis_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="opis_cod_id" Type="int" />
+          <Property Name="opis_pd_id" Type="int" />
+          <Property Name="opis_id_id" Type="int" />
+          <Property Name="opis_pifd_id" Type="int" />
+          <Property Name="opis_pp_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tp_order_product_mapping">
+          <Key>
+            <PropertyRef Name="opm_id" />
+          </Key>
+          <Property Name="opm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="opm_cod_id" Type="int" />
+          <Property Name="opm_pd_id" Type="int" />
+          <Property Name="opm_price" Type="nvarchar" MaxLength="100" />
+          <Property Name="opm_Comment" Type="nvarchar(max)" />
+          <Property Name="opm_quantity" Type="int" />
+          <Property Name="opm_pp_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tp_pizza_base_type">
+          <Key>
+            <PropertyRef Name="pbt_id" />
+          </Key>
+          <Property Name="pbt_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pbt_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="pbt_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_product_category">
+          <Key>
+            <PropertyRef Name="pc_id" />
+          </Key>
+          <Property Name="pc_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pc_sd_id" Type="int" />
+          <Property Name="pc_seqno" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="pc_name" Type="varchar" MaxLength="100" />
+          <Property Name="pc_parent" Type="int" />
+          <Property Name="pc_description1" Type="nvarchar(max)" />
+          <Property Name="pc_image_url" Type="nvarchar" MaxLength="100" />
+          <Property Name="pc_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_product_details">
+          <Key>
+            <PropertyRef Name="pd_id" />
+          </Key>
+          <Property Name="pd_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pd_seqno" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="pd_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="pd_pc_id" Type="int" />
+          <Property Name="pd_description1" Type="nvarchar(max)" />
+          <Property Name="pd_base_price" Type="nvarchar" MaxLength="100" />
+          <Property Name="pd_image_url" Type="nvarchar" MaxLength="100" />
+          <Property Name="pd_is_active" Type="bit" />
+          <Property Name="pd_is_delivered" Type="bit" />
+          <Property Name="pd_is_marked_new" Type="bit" />
+          <Property Name="pd_is_marked_speciality" Type="bit" />
+          <Property Name="pd_can_comment" Type="bit" />
+          <Property Name="pd_Is_Commant_Compulsary" Type="bit" />
+          <Property Name="pd_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="pd_sd_id" Type="int" />
+          <Property Name="pp_base_single_ingredients_price" Type="nvarchar" MaxLength="200" />
+          <Property Name="pp_base_double_ingredients_price" Type="nvarchar" MaxLength="200" />
+          <Property Name="no_free_ingredients" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tp_product_ingredient_fact_detail">
+          <Key>
+            <PropertyRef Name="pifd_id" />
+          </Key>
+          <Property Name="pifd_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pifd_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="pifd_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_product_ingredient_fact_mapping">
+          <Key>
+            <PropertyRef Name="pifm_id" />
+          </Key>
+          <Property Name="pifm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pd_id" Type="int" />
+          <Property Name="pifd_id" Type="int" />
+          <Property Name="pifm_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="id_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tp_product_making_method">
+          <Key>
+            <PropertyRef Name="pmm_id" />
+          </Key>
+          <Property Name="pmm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pmm_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="pmm_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_product_properties">
+          <Key>
+            <PropertyRef Name="pp_id" />
+          </Key>
+          <Property Name="pp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ps_id" Type="int" />
+          <Property Name="pd_id" Type="int" />
+          <Property Name="pbt_id" Type="int" />
+          <Property Name="pmm_id" Type="int" />
+          <Property Name="pp_price" Type="nvarchar" MaxLength="100" />
+          <Property Name="pp_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="pp_single_ingredients_price" Type="nvarchar" MaxLength="200" />
+          <Property Name="pp_double_ingredients_price" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tp_product_sizes">
+          <Key>
+            <PropertyRef Name="ps_id" />
+          </Key>
+          <Property Name="ps_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ps_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="ps_description" Type="nvarchar" MaxLength="100" />
+          <Property Name="ps_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_state">
+          <Key>
+            <PropertyRef Name="tps_id" />
+          </Key>
+          <Property Name="tps_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tps_state_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="tps_tpc_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tp_store_details">
+          <Key>
+            <PropertyRef Name="sd_id" />
+          </Key>
+          <Property Name="sd_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sd_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="sd_country_id" Type="int" />
+          <Property Name="sd_state_id" Type="int" />
+          <Property Name="sd_city_id" Type="int" />
+          <Property Name="sd_address" Type="nvarchar" MaxLength="100" />
+          <Property Name="sd_contact_number1" Type="nvarchar" MaxLength="100" />
+          <Property Name="sd_contact_number2" Type="nvarchar" MaxLength="100" />
+          <Property Name="sd_contact_number3" Type="nvarchar" MaxLength="100" />
+          <Property Name="sd_contact_number4" Type="nvarchar" MaxLength="100" />
+          <Property Name="sd_fax_number" Type="nvarchar" MaxLength="100" />
+          <Property Name="sd_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_store_working_mapping">
+          <Key>
+            <PropertyRef Name="swm_id" />
+          </Key>
+          <Property Name="swm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="swm_sd_id" Type="int" />
+          <Property Name="swm_wd_id" Type="int" />
+          <Property Name="swm_start_time" Type="datetime" />
+          <Property Name="swm_end_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_transaction_detail">
+          <Key>
+            <PropertyRef Name="td_id" />
+          </Key>
+          <Property Name="td_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="td_od_id" Type="int" />
+          <Property Name="td_transaction_date" Type="datetime" />
+          <Property Name="Php_Payment_Status" Type="int" />
+          <Property Name="Php_Payment_Amount" Type="nvarchar" MaxLength="50" />
+          <Property Name="Php_PG_Transaction_id" Type="nvarchar" MaxLength="100" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tp_user_information">
+          <Key>
+            <PropertyRef Name="ui_id" />
+          </Key>
+          <Property Name="ui_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ui_seqno" Type="nvarchar" MaxLength="100" />
+          <Property Name="ui_firstName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ui_lastName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ui_userName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ui_email" Type="nvarchar" MaxLength="100" />
+          <Property Name="ui_password" Type="nvarchar" MaxLength="100" />
+          <Property Name="ui_mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="ui_telephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="ui_country_id" Type="int" />
+          <Property Name="ui_state_id" Type="int" />
+          <Property Name="ui_city" Type="nvarchar" MaxLength="100" />
+          <Property Name="ui_pincode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ui_usertype" Type="int" />
+          <Property Name="ui_gender" Type="int" />
+          <Property Name="ui_addressLine1" Type="nvarchar" MaxLength="100" />
+          <Property Name="ui_addressLine2" Type="nvarchar" MaxLength="100" />
+          <Property Name="ui_street" Type="nvarchar" MaxLength="100" />
+          <Property Name="ui_house_no" Type="nvarchar" MaxLength="100" />
+          <Property Name="ui_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+          <Property Name="pd_sd_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tp_working_days">
+          <Key>
+            <PropertyRef Name="wd_id" />
+          </Key>
+          <Property Name="wd_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="wd_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="wd_isdeleted" Type="bit" />
+          <Property Name="createdby" Type="int" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="createdon" Type="datetime" />
+          <Property Name="modifiedon" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="TP_DatabaseModelStoreContainer">
+          <EntitySet Name="tp_billing_detail" EntityType="Self.tp_billing_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_cart_detail" EntityType="Self.tp_cart_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_cart_ingredient_mapping" EntityType="Self.tp_cart_ingredient_mapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_city" EntityType="Self.tp_city" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_config" EntityType="Self.tp_config" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_country" EntityType="Self.tp_country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_customer_order_details" EntityType="Self.tp_customer_order_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_dailyspecials_offer" EntityType="Self.tp_dailyspecials_offer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_dollars_offer" EntityType="Self.tp_dollars_offer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_feast_forfive_offer" EntityType="Self.tp_feast_forfive_offer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_free_pizza_offer" EntityType="Self.tp_free_pizza_offer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_ingredient_category_mapping" EntityType="Self.tp_ingredient_category_mapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_ingredient_details" EntityType="Self.tp_ingredient_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_ingredient_product_mapping" EntityType="Self.tp_ingredient_product_mapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_ingredients_product_size_mapping" EntityType="Self.tp_ingredients_product_size_mapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_newsletter_information" EntityType="Self.tp_newsletter_information" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_offer_master" EntityType="Self.tp_offer_master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_order_product_ingredients_specification" EntityType="Self.tp_order_product_ingredients_specification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_order_product_mapping" EntityType="Self.tp_order_product_mapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_pizza_base_type" EntityType="Self.tp_pizza_base_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_product_category" EntityType="Self.tp_product_category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_product_details" EntityType="Self.tp_product_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_product_ingredient_fact_detail" EntityType="Self.tp_product_ingredient_fact_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_product_ingredient_fact_mapping" EntityType="Self.tp_product_ingredient_fact_mapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_product_making_method" EntityType="Self.tp_product_making_method" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_product_properties" EntityType="Self.tp_product_properties" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_product_sizes" EntityType="Self.tp_product_sizes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_state" EntityType="Self.tp_state" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_store_details" EntityType="Self.tp_store_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_store_working_mapping" EntityType="Self.tp_store_working_mapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_transaction_detail" EntityType="Self.tp_transaction_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_user_information" EntityType="Self.tp_user_information" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tp_working_days" EntityType="Self.tp_working_days" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TP_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TP_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="tp_billing_detail" EntityType="TP_DatabaseModel.tp_billing_detail" />
+          <EntitySet Name="tp_cart_detail" EntityType="TP_DatabaseModel.tp_cart_detail" />
+          <EntitySet Name="tp_city" EntityType="TP_DatabaseModel.tp_city" />
+          <EntitySet Name="tp_config" EntityType="TP_DatabaseModel.tp_config" />
+          <EntitySet Name="tp_country" EntityType="TP_DatabaseModel.tp_country" />
+          <EntitySet Name="tp_customer_order_details" EntityType="TP_DatabaseModel.tp_customer_order_details" />
+          <EntitySet Name="tp_dailyspecials_offer" EntityType="TP_DatabaseModel.tp_dailyspecials_offer" />
+          <EntitySet Name="tp_dollars_offer" EntityType="TP_DatabaseModel.tp_dollars_offer" />
+          <EntitySet Name="tp_feast_forfive_offer" EntityType="TP_DatabaseModel.tp_feast_forfive_offer" />
+          <EntitySet Name="tp_free_pizza_offer" EntityType="TP_DatabaseModel.tp_free_pizza_offer" />
+          <EntitySet Name="tp_ingredient_category_mapping" EntityType="TP_DatabaseModel.tp_ingredient_category_mapping" />
+          <EntitySet Name="tp_ingredient_details" EntityType="TP_DatabaseModel.tp_ingredient_details" />
+          <EntitySet Name="tp_ingredient_product_mapping" EntityType="TP_DatabaseModel.tp_ingredient_product_mapping" />
+          <EntitySet Name="tp_ingredients_product_size_mapping" EntityType="TP_DatabaseModel.tp_ingredients_product_size_mapping" />
+          <EntitySet Name="tp_newsletter_information" EntityType="TP_DatabaseModel.tp_newsletter_information" />
+          <EntitySet Name="tp_offer_master" EntityType="TP_DatabaseModel.tp_offer_master" />
+          <EntitySet Name="tp_order_product_ingredients_specification" EntityType="TP_DatabaseModel.tp_order_product_ingredients_specification" />
+          <EntitySet Name="tp_order_product_mapping" EntityType="TP_DatabaseModel.tp_order_product_mapping" />
+          <EntitySet Name="tp_pizza_base_type" EntityType="TP_DatabaseModel.tp_pizza_base_type" />
+          <EntitySet Name="tp_product_category" EntityType="TP_DatabaseModel.tp_product_category" />
+          <EntitySet Name="tp_product_ingredient_fact_detail" EntityType="TP_DatabaseModel.tp_product_ingredient_fact_detail" />
+          <EntitySet Name="tp_product_making_method" EntityType="TP_DatabaseModel.tp_product_making_method" />
+          <EntitySet Name="tp_product_properties" EntityType="TP_DatabaseModel.tp_product_properties" />
+          <EntitySet Name="tp_product_sizes" EntityType="TP_DatabaseModel.tp_product_sizes" />
+          <EntitySet Name="tp_state" EntityType="TP_DatabaseModel.tp_state" />
+          <EntitySet Name="tp_store_details" EntityType="TP_DatabaseModel.tp_store_details" />
+          <EntitySet Name="tp_store_working_mapping" EntityType="TP_DatabaseModel.tp_store_working_mapping" />
+          <EntitySet Name="tp_transaction_detail" EntityType="TP_DatabaseModel.tp_transaction_detail" />
+          <EntitySet Name="tp_user_information" EntityType="TP_DatabaseModel.tp_user_information" />
+          <EntitySet Name="tp_working_days" EntityType="TP_DatabaseModel.tp_working_days" />
+          <EntitySet Name="tp_product_details" EntityType="TP_DatabaseModel.tp_product_details" />
+          <EntitySet Name="tp_product_ingredient_fact_mapping" EntityType="TP_DatabaseModel.tp_product_ingredient_fact_mapping" />
+          <EntitySet Name="tp_cart_ingredient_mapping" EntityType="TP_DatabaseModel.tp_cart_ingredient_mapping" />
+          </EntityContainer>
+        <EntityType Name="tp_billing_detail">
+          <Key>
+            <PropertyRef Name="tbd_id" />
+          </Key>
+          <Property Name="tbd_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tbd_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tbd_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tbd_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tbd_city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tbd_state_id" Type="Int32" />
+          <Property Name="tbd_zipcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tbd_telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tbd_delivery_instruction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tbd_cod_id" Type="Int32" />
+          <Property Name="tbd_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_cart_detail">
+          <Key>
+            <PropertyRef Name="cd_id" />
+          </Key>
+          <Property Name="cd_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cd_pi_id" Type="Int32" />
+          <Property Name="cd_ui_id" Type="Int32" />
+          <Property Name="cd_si_id" Type="Int32" />
+          <Property Name="cd_pp_id" Type="Int32" />
+          <Property Name="cd_quantity" Type="Int32" />
+          <Property Name="cd_takeaway_price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cd_pifd_id" Type="Int32" />
+          <Property Name="cd_random_number" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="cd_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+          <Property Name="cd_comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tp_city">
+          <Key>
+            <PropertyRef Name="tpci_id" />
+          </Key>
+          <Property Name="tpci_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tpci_city_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tpci_tps_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tp_config">
+          <Key>
+            <PropertyRef Name="tpc_id" />
+          </Key>
+          <Property Name="tpc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tpc_key" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tpc_value" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tp_country">
+          <Key>
+            <PropertyRef Name="tpc_id" />
+          </Key>
+          <Property Name="tpc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tpc_country_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tp_customer_order_details">
+          <Key>
+            <PropertyRef Name="cod_id" />
+          </Key>
+          <Property Name="cod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cod_order_number" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cod_ui_id" Type="Int32" />
+          <Property Name="cod_sd_id" Type="Int32" />
+          <Property Name="cod_order_placed_time" Type="DateTime" Precision="3" />
+          <Property Name="cod_order_wish_time" Type="DateTime" Precision="3" />
+          <Property Name="cod_order_actual_delivered_time" Type="DateTime" Precision="3" />
+          <Property Name="cod_total_amount" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cod_order_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cod_order_status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cod_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+          <Property Name="cod_tax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cod_delivery_charge" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tp_dailyspecials_offer">
+          <Key>
+            <PropertyRef Name="dso_id" />
+          </Key>
+          <Property Name="dso_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dso_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dso_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dso_Offer_code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dso_day" Type="Int32" />
+          <Property Name="dso_product1_pd_id" Type="Int32" />
+          <Property Name="dso_product1_quantity" Type="Int32" />
+          <Property Name="dso_product1_ps_id" Type="Int32" />
+          <Property Name="dso_product2_pd_id" Type="Int32" />
+          <Property Name="dso_product2_quantity" Type="Int32" />
+          <Property Name="dso_product2_ps_id" Type="Int32" />
+          <Property Name="dso_amount" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dso_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+          <Property Name="dso_start_date" Type="DateTime" Precision="3" />
+          <Property Name="dso_end_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_dollars_offer">
+          <Key>
+            <PropertyRef Name="do_id" />
+          </Key>
+          <Property Name="do_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="do_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="do_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="do_offer_code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="do_ps_id" Type="Int32" />
+          <Property Name="do_amount" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="do_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+          <Property Name="do_start_date" Type="DateTime" Precision="3" />
+          <Property Name="do_end_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_feast_forfive_offer">
+          <Key>
+            <PropertyRef Name="ffo_id" />
+          </Key>
+          <Property Name="ffo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ffo_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ffo_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ffo_offer_code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ffo_product1_id" Type="Int32" />
+          <Property Name="ffo_product1_ps_id" Type="Int32" />
+          <Property Name="ffo_product1_quantity" Type="Int32" />
+          <Property Name="ffo_product2_pd_id" Type="Int32" />
+          <Property Name="ffo_product2_quantity" Type="Int32" />
+          <Property Name="ffo_product3_pd_id" Type="Int32" />
+          <Property Name="ffo_product3_quantity" Type="Int32" />
+          <Property Name="ffo_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+          <Property Name="ffo_amount" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ffo_start_date" Type="DateTime" Precision="3" />
+          <Property Name="ffo_end_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_free_pizza_offer">
+          <Key>
+            <PropertyRef Name="fpo_id" />
+          </Key>
+          <Property Name="fpo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fpo_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fpo_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fpo_offer_code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fpo_free_product" Type="Int32" />
+          <Property Name="fpo_free_ps_id" Type="Int32" />
+          <Property Name="fpo_validate_product" Type="Int32" />
+          <Property Name="fpo_validate_ingredients" Type="Int32" />
+          <Property Name="fpo_validate_ps_id" Type="Int32" />
+          <Property Name="fpo_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+          <Property Name="fpo_start_date" Type="DateTime" Precision="3" />
+          <Property Name="fpo_end_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_ingredient_category_mapping">
+          <Key>
+            <PropertyRef Name="icm_id" />
+          </Key>
+          <Property Name="icm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pc_id" Type="Int32" />
+          <Property Name="id_id" Type="Int32" />
+          <Property Name="icm_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_ingredient_details">
+          <Key>
+            <PropertyRef Name="id_id" />
+          </Key>
+          <Property Name="id_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="id_description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="id_price" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="id_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_ingredient_product_mapping">
+          <Key>
+            <PropertyRef Name="ipm_id" />
+          </Key>
+          <Property Name="ipm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_id" Type="Int32" />
+          <Property Name="pd_id" Type="Int32" />
+          <Property Name="iipm_isDefault" Type="Boolean" />
+          <Property Name="ipm_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+          <Property Name="iipm_IsSingleIngredient" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tp_ingredients_product_size_mapping">
+          <Key>
+            <PropertyRef Name="ipsm_id" />
+          </Key>
+          <Property Name="ipsm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ipsm_id_id" Type="Int32" />
+          <Property Name="ipsm_ps_id" Type="Int32" />
+          <Property Name="ipsm_price" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ipsm_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_newsletter_information">
+          <Key>
+            <PropertyRef Name="nl_id" />
+          </Key>
+          <Property Name="nl_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nl_email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nl_issubscribed" Type="Boolean" />
+          <Property Name="nl_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_offer_master">
+          <Key>
+            <PropertyRef Name="om_id" />
+          </Key>
+          <Property Name="om_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="om_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="om_type" Type="Int32" />
+          <Property Name="om_value" Type="Int32" />
+          <Property Name="om_offer_code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="om_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_order_product_ingredients_specification">
+          <Key>
+            <PropertyRef Name="opis_id" />
+          </Key>
+          <Property Name="opis_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="opis_cod_id" Type="Int32" />
+          <Property Name="opis_pd_id" Type="Int32" />
+          <Property Name="opis_id_id" Type="Int32" />
+          <Property Name="opis_pifd_id" Type="Int32" />
+          <Property Name="opis_pp_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tp_order_product_mapping">
+          <Key>
+            <PropertyRef Name="opm_id" />
+          </Key>
+          <Property Name="opm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="opm_cod_id" Type="Int32" />
+          <Property Name="opm_pd_id" Type="Int32" />
+          <Property Name="opm_price" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="opm_Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="opm_quantity" Type="Int32" />
+          <Property Name="opm_pp_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tp_pizza_base_type">
+          <Key>
+            <PropertyRef Name="pbt_id" />
+          </Key>
+          <Property Name="pbt_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pbt_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pbt_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_product_category">
+          <Key>
+            <PropertyRef Name="pc_id" />
+          </Key>
+          <Property Name="pc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pc_sd_id" Type="Int32" />
+          <Property Name="pc_seqno" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pc_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="pc_parent" Type="Int32" />
+          <Property Name="pc_description1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pc_image_url" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pc_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_product_ingredient_fact_detail">
+          <Key>
+            <PropertyRef Name="pifd_id" />
+          </Key>
+          <Property Name="pifd_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pifd_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pifd_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_product_making_method">
+          <Key>
+            <PropertyRef Name="pmm_id" />
+          </Key>
+          <Property Name="pmm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pmm_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pmm_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_product_properties">
+          <Key>
+            <PropertyRef Name="pp_id" />
+          </Key>
+          <Property Name="pp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ps_id" Type="Int32" />
+          <Property Name="pd_id" Type="Int32" />
+          <Property Name="pbt_id" Type="Int32" />
+          <Property Name="pmm_id" Type="Int32" />
+          <Property Name="pp_price" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pp_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+          <Property Name="pp_single_ingredients_price" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="pp_double_ingredients_price" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tp_product_sizes">
+          <Key>
+            <PropertyRef Name="ps_id" />
+          </Key>
+          <Property Name="ps_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ps_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ps_description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ps_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_state">
+          <Key>
+            <PropertyRef Name="tps_id" />
+          </Key>
+          <Property Name="tps_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tps_state_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tps_tpc_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tp_store_details">
+          <Key>
+            <PropertyRef Name="sd_id" />
+          </Key>
+          <Property Name="sd_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sd_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sd_country_id" Type="Int32" />
+          <Property Name="sd_state_id" Type="Int32" />
+          <Property Name="sd_city_id" Type="Int32" />
+          <Property Name="sd_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sd_contact_number1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sd_contact_number2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sd_contact_number3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sd_contact_number4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sd_fax_number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sd_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_store_working_mapping">
+          <Key>
+            <PropertyRef Name="swm_id" />
+          </Key>
+          <Property Name="swm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="swm_sd_id" Type="Int32" />
+          <Property Name="swm_wd_id" Type="Int32" />
+          <Property Name="swm_start_time" Type="DateTime" Precision="3" />
+          <Property Name="swm_end_time" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_transaction_detail">
+          <Key>
+            <PropertyRef Name="td_id" />
+          </Key>
+          <Property Name="td_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="td_od_id" Type="Int32" />
+          <Property Name="td_transaction_date" Type="DateTime" Precision="3" />
+          <Property Name="Php_Payment_Status" Type="Int32" />
+          <Property Name="Php_Payment_Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Php_PG_Transaction_id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_user_information">
+          <Key>
+            <PropertyRef Name="ui_id" />
+          </Key>
+          <Property Name="ui_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ui_seqno" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ui_firstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ui_lastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ui_userName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ui_email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ui_password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ui_mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ui_telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ui_country_id" Type="Int32" />
+          <Property Name="ui_state_id" Type="Int32" />
+          <Property Name="ui_city" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ui_pincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ui_usertype" Type="Int32" />
+          <Property Name="ui_gender" Type="Int32" />
+          <Property Name="ui_addressLine1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ui_addressLine2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ui_street" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ui_house_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ui_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+          <Property Name="pd_sd_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tp_working_days">
+          <Key>
+            <PropertyRef Name="wd_id" />
+          </Key>
+          <Property Name="wd_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="wd_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="wd_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tp_product_details">
+          <Key>
+            <PropertyRef Name="pd_id" />
+          </Key>
+          <Property Name="pd_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pd_seqno" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="pd_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pd_pc_id" Type="Int32" />
+          <Property Name="pd_description1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pd_base_price" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pd_image_url" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pd_is_active" Type="Boolean" />
+          <Property Name="pd_is_delivered" Type="Boolean" />
+          <Property Name="pd_is_marked_new" Type="Boolean" />
+          <Property Name="pd_is_marked_speciality" Type="Boolean" />
+          <Property Name="pd_can_comment" Type="Boolean" />
+          <Property Name="pd_Is_Commant_Compulsary" Type="Boolean" />
+          <Property Name="pd_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+          <Property Name="pd_sd_id" Type="Int32" />
+          <Property Name="pp_base_single_ingredients_price" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="pp_base_double_ingredients_price" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="no_free_ingredients" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tp_product_ingredient_fact_mapping">
+          <Key>
+            <PropertyRef Name="pifm_id" />
+          </Key>
+          <Property Name="pifm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pd_id" Type="Int32" />
+          <Property Name="pifd_id" Type="Int32" />
+          <Property Name="pifm_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+          <Property Name="id_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tp_cart_ingredient_mapping">
+          <Key>
+            <PropertyRef Name="cim_id" />
+          </Key>
+          <Property Name="cim_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cim_cd_id" Type="Int32" />
+          <Property Name="cim_id_id" Type="Int32" />
+          <Property Name="cim_isdeleted" Type="Boolean" />
+          <Property Name="createdby" Type="Int32" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="createdon" Type="DateTime" Precision="3" />
+          <Property Name="modifiedon" Type="DateTime" Precision="3" />
+          <Property Name="cim_id_price" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cim_fact_id" Type="Int32" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TP_DatabaseModelStoreContainer" CdmEntityContainer="TP_DatabaseEntities">
+          <EntitySetMapping Name="tp_billing_detail">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_billing_detail">
+              <MappingFragment StoreEntitySet="tp_billing_detail">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="tbd_isdeleted" ColumnName="tbd_isdeleted" />
+                <ScalarProperty Name="tbd_cod_id" ColumnName="tbd_cod_id" />
+                <ScalarProperty Name="tbd_delivery_instruction" ColumnName="tbd_delivery_instruction" />
+                <ScalarProperty Name="tbd_telephone" ColumnName="tbd_telephone" />
+                <ScalarProperty Name="tbd_zipcode" ColumnName="tbd_zipcode" />
+                <ScalarProperty Name="tbd_state_id" ColumnName="tbd_state_id" />
+                <ScalarProperty Name="tbd_city" ColumnName="tbd_city" />
+                <ScalarProperty Name="tbd_email" ColumnName="tbd_email" />
+                <ScalarProperty Name="tbd_address" ColumnName="tbd_address" />
+                <ScalarProperty Name="tbd_name" ColumnName="tbd_name" />
+                <ScalarProperty Name="tbd_id" ColumnName="tbd_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_cart_detail">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_cart_detail">
+              <MappingFragment StoreEntitySet="tp_cart_detail">
+                <ScalarProperty Name="cd_comment" ColumnName="cd_comment" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="cd_isdeleted" ColumnName="cd_isdeleted" />
+                <ScalarProperty Name="cd_random_number" ColumnName="cd_random_number" />
+                <ScalarProperty Name="cd_pifd_id" ColumnName="cd_pifd_id" />
+                <ScalarProperty Name="cd_takeaway_price" ColumnName="cd_takeaway_price" />
+                <ScalarProperty Name="cd_quantity" ColumnName="cd_quantity" />
+                <ScalarProperty Name="cd_pp_id" ColumnName="cd_pp_id" />
+                <ScalarProperty Name="cd_si_id" ColumnName="cd_si_id" />
+                <ScalarProperty Name="cd_ui_id" ColumnName="cd_ui_id" />
+                <ScalarProperty Name="cd_pi_id" ColumnName="cd_pi_id" />
+                <ScalarProperty Name="cd_id" ColumnName="cd_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_city">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_city">
+              <MappingFragment StoreEntitySet="tp_city">
+                <ScalarProperty Name="tpci_tps_id" ColumnName="tpci_tps_id" />
+                <ScalarProperty Name="tpci_city_name" ColumnName="tpci_city_name" />
+                <ScalarProperty Name="tpci_id" ColumnName="tpci_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_config">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_config">
+              <MappingFragment StoreEntitySet="tp_config">
+                <ScalarProperty Name="tpc_value" ColumnName="tpc_value" />
+                <ScalarProperty Name="tpc_key" ColumnName="tpc_key" />
+                <ScalarProperty Name="tpc_id" ColumnName="tpc_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_country">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_country">
+              <MappingFragment StoreEntitySet="tp_country">
+                <ScalarProperty Name="tpc_country_name" ColumnName="tpc_country_name" />
+                <ScalarProperty Name="tpc_id" ColumnName="tpc_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_customer_order_details">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_customer_order_details">
+              <MappingFragment StoreEntitySet="tp_customer_order_details">
+                <ScalarProperty Name="cod_delivery_charge" ColumnName="cod_delivery_charge" />
+                <ScalarProperty Name="cod_tax" ColumnName="cod_tax" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="cod_isdeleted" ColumnName="cod_isdeleted" />
+                <ScalarProperty Name="cod_order_status" ColumnName="cod_order_status" />
+                <ScalarProperty Name="cod_order_type" ColumnName="cod_order_type" />
+                <ScalarProperty Name="cod_total_amount" ColumnName="cod_total_amount" />
+                <ScalarProperty Name="cod_order_actual_delivered_time" ColumnName="cod_order_actual_delivered_time" />
+                <ScalarProperty Name="cod_order_wish_time" ColumnName="cod_order_wish_time" />
+                <ScalarProperty Name="cod_order_placed_time" ColumnName="cod_order_placed_time" />
+                <ScalarProperty Name="cod_sd_id" ColumnName="cod_sd_id" />
+                <ScalarProperty Name="cod_ui_id" ColumnName="cod_ui_id" />
+                <ScalarProperty Name="cod_order_number" ColumnName="cod_order_number" />
+                <ScalarProperty Name="cod_id" ColumnName="cod_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_dailyspecials_offer">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_dailyspecials_offer">
+              <MappingFragment StoreEntitySet="tp_dailyspecials_offer">
+                <ScalarProperty Name="dso_end_date" ColumnName="dso_end_date" />
+                <ScalarProperty Name="dso_start_date" ColumnName="dso_start_date" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="dso_isdeleted" ColumnName="dso_isdeleted" />
+                <ScalarProperty Name="dso_amount" ColumnName="dso_amount" />
+                <ScalarProperty Name="dso_product2_ps_id" ColumnName="dso_product2_ps_id" />
+                <ScalarProperty Name="dso_product2_quantity" ColumnName="dso_product2_quantity" />
+                <ScalarProperty Name="dso_product2_pd_id" ColumnName="dso_product2_pd_id" />
+                <ScalarProperty Name="dso_product1_ps_id" ColumnName="dso_product1_ps_id" />
+                <ScalarProperty Name="dso_product1_quantity" ColumnName="dso_product1_quantity" />
+                <ScalarProperty Name="dso_product1_pd_id" ColumnName="dso_product1_pd_id" />
+                <ScalarProperty Name="dso_day" ColumnName="dso_day" />
+                <ScalarProperty Name="dso_Offer_code" ColumnName="dso_Offer_code" />
+                <ScalarProperty Name="dso_description" ColumnName="dso_description" />
+                <ScalarProperty Name="dso_name" ColumnName="dso_name" />
+                <ScalarProperty Name="dso_id" ColumnName="dso_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_dollars_offer">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_dollars_offer">
+              <MappingFragment StoreEntitySet="tp_dollars_offer">
+                <ScalarProperty Name="do_end_date" ColumnName="do_end_date" />
+                <ScalarProperty Name="do_start_date" ColumnName="do_start_date" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="do_isdeleted" ColumnName="do_isdeleted" />
+                <ScalarProperty Name="do_amount" ColumnName="do_amount" />
+                <ScalarProperty Name="do_ps_id" ColumnName="do_ps_id" />
+                <ScalarProperty Name="do_offer_code" ColumnName="do_offer_code" />
+                <ScalarProperty Name="do_description" ColumnName="do_description" />
+                <ScalarProperty Name="do_name" ColumnName="do_name" />
+                <ScalarProperty Name="do_id" ColumnName="do_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_feast_forfive_offer">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_feast_forfive_offer">
+              <MappingFragment StoreEntitySet="tp_feast_forfive_offer">
+                <ScalarProperty Name="ffo_end_date" ColumnName="ffo_end_date" />
+                <ScalarProperty Name="ffo_start_date" ColumnName="ffo_start_date" />
+                <ScalarProperty Name="ffo_amount" ColumnName="ffo_amount" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="ffo_isdeleted" ColumnName="ffo_isdeleted" />
+                <ScalarProperty Name="ffo_product3_quantity" ColumnName="ffo_product3_quantity" />
+                <ScalarProperty Name="ffo_product3_pd_id" ColumnName="ffo_product3_pd_id" />
+                <ScalarProperty Name="ffo_product2_quantity" ColumnName="ffo_product2_quantity" />
+                <ScalarProperty Name="ffo_product2_pd_id" ColumnName="ffo_product2_pd_id" />
+                <ScalarProperty Name="ffo_product1_quantity" ColumnName="ffo_product1_quantity" />
+                <ScalarProperty Name="ffo_product1_ps_id" ColumnName="ffo_product1_ps_id" />
+                <ScalarProperty Name="ffo_product1_id" ColumnName="ffo_product1_id" />
+                <ScalarProperty Name="ffo_offer_code" ColumnName="ffo_offer_code" />
+                <ScalarProperty Name="ffo_description" ColumnName="ffo_description" />
+                <ScalarProperty Name="ffo_name" ColumnName="ffo_name" />
+                <ScalarProperty Name="ffo_id" ColumnName="ffo_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_free_pizza_offer">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_free_pizza_offer">
+              <MappingFragment StoreEntitySet="tp_free_pizza_offer">
+                <ScalarProperty Name="fpo_end_date" ColumnName="fpo_end_date" />
+                <ScalarProperty Name="fpo_start_date" ColumnName="fpo_start_date" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="fpo_isdeleted" ColumnName="fpo_isdeleted" />
+                <ScalarProperty Name="fpo_validate_ps_id" ColumnName="fpo_validate_ps_id" />
+                <ScalarProperty Name="fpo_validate_ingredients" ColumnName="fpo_validate_ingredients" />
+                <ScalarProperty Name="fpo_validate_product" ColumnName="fpo_validate_product" />
+                <ScalarProperty Name="fpo_free_ps_id" ColumnName="fpo_free_ps_id" />
+                <ScalarProperty Name="fpo_free_product" ColumnName="fpo_free_product" />
+                <ScalarProperty Name="fpo_offer_code" ColumnName="fpo_offer_code" />
+                <ScalarProperty Name="fpo_description" ColumnName="fpo_description" />
+                <ScalarProperty Name="fpo_name" ColumnName="fpo_name" />
+                <ScalarProperty Name="fpo_id" ColumnName="fpo_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_ingredient_category_mapping">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_ingredient_category_mapping">
+              <MappingFragment StoreEntitySet="tp_ingredient_category_mapping">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="icm_isdeleted" ColumnName="icm_isdeleted" />
+                <ScalarProperty Name="id_id" ColumnName="id_id" />
+                <ScalarProperty Name="pc_id" ColumnName="pc_id" />
+                <ScalarProperty Name="icm_id" ColumnName="icm_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_ingredient_details">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_ingredient_details">
+              <MappingFragment StoreEntitySet="tp_ingredient_details">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="id_isdeleted" ColumnName="id_isdeleted" />
+                <ScalarProperty Name="id_price" ColumnName="id_price" />
+                <ScalarProperty Name="id_description" ColumnName="id_description" />
+                <ScalarProperty Name="id_name" ColumnName="id_name" />
+                <ScalarProperty Name="id_id" ColumnName="id_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_ingredient_product_mapping">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_ingredient_product_mapping">
+              <MappingFragment StoreEntitySet="tp_ingredient_product_mapping">
+                <ScalarProperty Name="iipm_IsSingleIngredient" ColumnName="iipm_IsSingleIngredient" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="ipm_isdeleted" ColumnName="ipm_isdeleted" />
+                <ScalarProperty Name="iipm_isDefault" ColumnName="iipm_isDefault" />
+                <ScalarProperty Name="pd_id" ColumnName="pd_id" />
+                <ScalarProperty Name="id_id" ColumnName="id_id" />
+                <ScalarProperty Name="ipm_id" ColumnName="ipm_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_ingredients_product_size_mapping">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_ingredients_product_size_mapping">
+              <MappingFragment StoreEntitySet="tp_ingredients_product_size_mapping">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="ipsm_isdeleted" ColumnName="ipsm_isdeleted" />
+                <ScalarProperty Name="ipsm_price" ColumnName="ipsm_price" />
+                <ScalarProperty Name="ipsm_ps_id" ColumnName="ipsm_ps_id" />
+                <ScalarProperty Name="ipsm_id_id" ColumnName="ipsm_id_id" />
+                <ScalarProperty Name="ipsm_id" ColumnName="ipsm_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_newsletter_information">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_newsletter_information">
+              <MappingFragment StoreEntitySet="tp_newsletter_information">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="nl_isdeleted" ColumnName="nl_isdeleted" />
+                <ScalarProperty Name="nl_issubscribed" ColumnName="nl_issubscribed" />
+                <ScalarProperty Name="nl_email" ColumnName="nl_email" />
+                <ScalarProperty Name="nl_id" ColumnName="nl_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_offer_master">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_offer_master">
+              <MappingFragment StoreEntitySet="tp_offer_master">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="om_isdeleted" ColumnName="om_isdeleted" />
+                <ScalarProperty Name="om_offer_code" ColumnName="om_offer_code" />
+                <ScalarProperty Name="om_value" ColumnName="om_value" />
+                <ScalarProperty Name="om_type" ColumnName="om_type" />
+                <ScalarProperty Name="om_name" ColumnName="om_name" />
+                <ScalarProperty Name="om_id" ColumnName="om_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_order_product_ingredients_specification">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_order_product_ingredients_specification">
+              <MappingFragment StoreEntitySet="tp_order_product_ingredients_specification">
+                <ScalarProperty Name="opis_pp_id" ColumnName="opis_pp_id" />
+                <ScalarProperty Name="opis_pifd_id" ColumnName="opis_pifd_id" />
+                <ScalarProperty Name="opis_id_id" ColumnName="opis_id_id" />
+                <ScalarProperty Name="opis_pd_id" ColumnName="opis_pd_id" />
+                <ScalarProperty Name="opis_cod_id" ColumnName="opis_cod_id" />
+                <ScalarProperty Name="opis_id" ColumnName="opis_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_order_product_mapping">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_order_product_mapping">
+              <MappingFragment StoreEntitySet="tp_order_product_mapping">
+                <ScalarProperty Name="opm_pp_id" ColumnName="opm_pp_id" />
+                <ScalarProperty Name="opm_quantity" ColumnName="opm_quantity" />
+                <ScalarProperty Name="opm_Comment" ColumnName="opm_Comment" />
+                <ScalarProperty Name="opm_price" ColumnName="opm_price" />
+                <ScalarProperty Name="opm_pd_id" ColumnName="opm_pd_id" />
+                <ScalarProperty Name="opm_cod_id" ColumnName="opm_cod_id" />
+                <ScalarProperty Name="opm_id" ColumnName="opm_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_pizza_base_type">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_pizza_base_type">
+              <MappingFragment StoreEntitySet="tp_pizza_base_type">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="pbt_isdeleted" ColumnName="pbt_isdeleted" />
+                <ScalarProperty Name="pbt_name" ColumnName="pbt_name" />
+                <ScalarProperty Name="pbt_id" ColumnName="pbt_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_product_category">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_product_category">
+              <MappingFragment StoreEntitySet="tp_product_category">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="pc_isdeleted" ColumnName="pc_isdeleted" />
+                <ScalarProperty Name="pc_image_url" ColumnName="pc_image_url" />
+                <ScalarProperty Name="pc_description1" ColumnName="pc_description1" />
+                <ScalarProperty Name="pc_parent" ColumnName="pc_parent" />
+                <ScalarProperty Name="pc_name" ColumnName="pc_name" />
+                <ScalarProperty Name="pc_seqno" ColumnName="pc_seqno" />
+                <ScalarProperty Name="pc_sd_id" ColumnName="pc_sd_id" />
+                <ScalarProperty Name="pc_id" ColumnName="pc_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_product_ingredient_fact_detail">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_product_ingredient_fact_detail">
+              <MappingFragment StoreEntitySet="tp_product_ingredient_fact_detail">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="pifd_isdeleted" ColumnName="pifd_isdeleted" />
+                <ScalarProperty Name="pifd_name" ColumnName="pifd_name" />
+                <ScalarProperty Name="pifd_id" ColumnName="pifd_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_product_making_method">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_product_making_method">
+              <MappingFragment StoreEntitySet="tp_product_making_method">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="pmm_isdeleted" ColumnName="pmm_isdeleted" />
+                <ScalarProperty Name="pmm_name" ColumnName="pmm_name" />
+                <ScalarProperty Name="pmm_id" ColumnName="pmm_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_product_properties">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_product_properties">
+              <MappingFragment StoreEntitySet="tp_product_properties">
+                <ScalarProperty Name="pp_double_ingredients_price" ColumnName="pp_double_ingredients_price" />
+                <ScalarProperty Name="pp_single_ingredients_price" ColumnName="pp_single_ingredients_price" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="pp_isdeleted" ColumnName="pp_isdeleted" />
+                <ScalarProperty Name="pp_price" ColumnName="pp_price" />
+                <ScalarProperty Name="pmm_id" ColumnName="pmm_id" />
+                <ScalarProperty Name="pbt_id" ColumnName="pbt_id" />
+                <ScalarProperty Name="pd_id" ColumnName="pd_id" />
+                <ScalarProperty Name="ps_id" ColumnName="ps_id" />
+                <ScalarProperty Name="pp_id" ColumnName="pp_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_product_sizes">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_product_sizes">
+              <MappingFragment StoreEntitySet="tp_product_sizes">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="ps_isdeleted" ColumnName="ps_isdeleted" />
+                <ScalarProperty Name="ps_description" ColumnName="ps_description" />
+                <ScalarProperty Name="ps_name" ColumnName="ps_name" />
+                <ScalarProperty Name="ps_id" ColumnName="ps_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_state">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_state">
+              <MappingFragment StoreEntitySet="tp_state">
+                <ScalarProperty Name="tps_tpc_id" ColumnName="tps_tpc_id" />
+                <ScalarProperty Name="tps_state_name" ColumnName="tps_state_name" />
+                <ScalarProperty Name="tps_id" ColumnName="tps_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_store_details">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_store_details">
+              <MappingFragment StoreEntitySet="tp_store_details">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="sd_isdeleted" ColumnName="sd_isdeleted" />
+                <ScalarProperty Name="sd_fax_number" ColumnName="sd_fax_number" />
+                <ScalarProperty Name="sd_contact_number4" ColumnName="sd_contact_number4" />
+                <ScalarProperty Name="sd_contact_number3" ColumnName="sd_contact_number3" />
+                <ScalarProperty Name="sd_contact_number2" ColumnName="sd_contact_number2" />
+                <ScalarProperty Name="sd_contact_number1" ColumnName="sd_contact_number1" />
+                <ScalarProperty Name="sd_address" ColumnName="sd_address" />
+                <ScalarProperty Name="sd_city_id" ColumnName="sd_city_id" />
+                <ScalarProperty Name="sd_state_id" ColumnName="sd_state_id" />
+                <ScalarProperty Name="sd_country_id" ColumnName="sd_country_id" />
+                <ScalarProperty Name="sd_name" ColumnName="sd_name" />
+                <ScalarProperty Name="sd_id" ColumnName="sd_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_store_working_mapping">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_store_working_mapping">
+              <MappingFragment StoreEntitySet="tp_store_working_mapping">
+                <ScalarProperty Name="swm_end_time" ColumnName="swm_end_time" />
+                <ScalarProperty Name="swm_start_time" ColumnName="swm_start_time" />
+                <ScalarProperty Name="swm_wd_id" ColumnName="swm_wd_id" />
+                <ScalarProperty Name="swm_sd_id" ColumnName="swm_sd_id" />
+                <ScalarProperty Name="swm_id" ColumnName="swm_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_transaction_detail">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_transaction_detail">
+              <MappingFragment StoreEntitySet="tp_transaction_detail">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="Php_PG_Transaction_id" ColumnName="Php_PG_Transaction_id" />
+                <ScalarProperty Name="Php_Payment_Amount" ColumnName="Php_Payment_Amount" />
+                <ScalarProperty Name="Php_Payment_Status" ColumnName="Php_Payment_Status" />
+                <ScalarProperty Name="td_transaction_date" ColumnName="td_transaction_date" />
+                <ScalarProperty Name="td_od_id" ColumnName="td_od_id" />
+                <ScalarProperty Name="td_id" ColumnName="td_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_user_information">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_user_information">
+              <MappingFragment StoreEntitySet="tp_user_information">
+                <ScalarProperty Name="pd_sd_id" ColumnName="pd_sd_id" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="ui_isdeleted" ColumnName="ui_isdeleted" />
+                <ScalarProperty Name="ui_house_no" ColumnName="ui_house_no" />
+                <ScalarProperty Name="ui_street" ColumnName="ui_street" />
+                <ScalarProperty Name="ui_addressLine2" ColumnName="ui_addressLine2" />
+                <ScalarProperty Name="ui_addressLine1" ColumnName="ui_addressLine1" />
+                <ScalarProperty Name="ui_gender" ColumnName="ui_gender" />
+                <ScalarProperty Name="ui_usertype" ColumnName="ui_usertype" />
+                <ScalarProperty Name="ui_pincode" ColumnName="ui_pincode" />
+                <ScalarProperty Name="ui_city" ColumnName="ui_city" />
+                <ScalarProperty Name="ui_state_id" ColumnName="ui_state_id" />
+                <ScalarProperty Name="ui_country_id" ColumnName="ui_country_id" />
+                <ScalarProperty Name="ui_telephone" ColumnName="ui_telephone" />
+                <ScalarProperty Name="ui_mobile" ColumnName="ui_mobile" />
+                <ScalarProperty Name="ui_password" ColumnName="ui_password" />
+                <ScalarProperty Name="ui_email" ColumnName="ui_email" />
+                <ScalarProperty Name="ui_userName" ColumnName="ui_userName" />
+                <ScalarProperty Name="ui_lastName" ColumnName="ui_lastName" />
+                <ScalarProperty Name="ui_firstName" ColumnName="ui_firstName" />
+                <ScalarProperty Name="ui_seqno" ColumnName="ui_seqno" />
+                <ScalarProperty Name="ui_id" ColumnName="ui_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_working_days">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_working_days">
+              <MappingFragment StoreEntitySet="tp_working_days">
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="wd_isdeleted" ColumnName="wd_isdeleted" />
+                <ScalarProperty Name="wd_name" ColumnName="wd_name" />
+                <ScalarProperty Name="wd_id" ColumnName="wd_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_product_details">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_product_details">
+              <MappingFragment StoreEntitySet="tp_product_details">
+                <ScalarProperty Name="no_free_ingredients" ColumnName="no_free_ingredients" />
+                <ScalarProperty Name="pp_base_double_ingredients_price" ColumnName="pp_base_double_ingredients_price" />
+                <ScalarProperty Name="pp_base_single_ingredients_price" ColumnName="pp_base_single_ingredients_price" />
+                <ScalarProperty Name="pd_sd_id" ColumnName="pd_sd_id" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="pd_isdeleted" ColumnName="pd_isdeleted" />
+                <ScalarProperty Name="pd_Is_Commant_Compulsary" ColumnName="pd_Is_Commant_Compulsary" />
+                <ScalarProperty Name="pd_can_comment" ColumnName="pd_can_comment" />
+                <ScalarProperty Name="pd_is_marked_speciality" ColumnName="pd_is_marked_speciality" />
+                <ScalarProperty Name="pd_is_marked_new" ColumnName="pd_is_marked_new" />
+                <ScalarProperty Name="pd_is_delivered" ColumnName="pd_is_delivered" />
+                <ScalarProperty Name="pd_is_active" ColumnName="pd_is_active" />
+                <ScalarProperty Name="pd_image_url" ColumnName="pd_image_url" />
+                <ScalarProperty Name="pd_base_price" ColumnName="pd_base_price" />
+                <ScalarProperty Name="pd_description1" ColumnName="pd_description1" />
+                <ScalarProperty Name="pd_pc_id" ColumnName="pd_pc_id" />
+                <ScalarProperty Name="pd_name" ColumnName="pd_name" />
+                <ScalarProperty Name="pd_seqno" ColumnName="pd_seqno" />
+                <ScalarProperty Name="pd_id" ColumnName="pd_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_product_ingredient_fact_mapping">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_product_ingredient_fact_mapping">
+              <MappingFragment StoreEntitySet="tp_product_ingredient_fact_mapping">
+                <ScalarProperty Name="id_id" ColumnName="id_id" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="pifm_isdeleted" ColumnName="pifm_isdeleted" />
+                <ScalarProperty Name="pifd_id" ColumnName="pifd_id" />
+                <ScalarProperty Name="pd_id" ColumnName="pd_id" />
+                <ScalarProperty Name="pifm_id" ColumnName="pifm_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tp_cart_ingredient_mapping">
+            <EntityTypeMapping TypeName="TP_DatabaseModel.tp_cart_ingredient_mapping">
+              <MappingFragment StoreEntitySet="tp_cart_ingredient_mapping">
+                <ScalarProperty Name="cim_fact_id" ColumnName="cim_fact_id" />
+                <ScalarProperty Name="cim_id_price" ColumnName="cim_id_price" />
+                <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="cim_isdeleted" ColumnName="cim_isdeleted" />
+                <ScalarProperty Name="cim_id_id" ColumnName="cim_id_id" />
+                <ScalarProperty Name="cim_cd_id" ColumnName="cim_cd_id" />
+                <ScalarProperty Name="cim_id" ColumnName="cim_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

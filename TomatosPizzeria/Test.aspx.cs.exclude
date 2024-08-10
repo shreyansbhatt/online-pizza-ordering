@@ -1,0 +1,116 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Test : System.Web.UI.Page
+{
+    TP_DatabaseEntities dbEntities = new TP_DatabaseEntities();
+    ClsMiscellaneousSettings objClsMiscellaneousSettings = new ClsMiscellaneousSettings();
+    tp_config objtp_config = new tp_config();
+    string TRANSACTION_KEY = string.Empty;
+    string LOGINID = string.Empty;
+    string CREDITCARD_NUMBER = string.Empty;
+    string CARD_EXPIRATION_DATE = string.Empty;
+    //private const string TRANSACTION_KEY = "4Z4p593457SGjexs";
+    //private string CREDITCARD_NUMBER = "Card number";
+    // private const string LOGINID = "5HBvdBr4G8g";
+    //private string CARD_EXPIRATION_DATE = "MM-YY";
+
+
+    
+    private string TransationID
+    {
+        get
+        {
+            if (ViewState["TransationID"] == null)
+                ViewState["TransationID"] = string.Empty;
+
+            return (string)ViewState["TransationID"];
+        }
+        set
+        {
+            ViewState["TransationID"] = value;
+        }
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        lblMessage.Text = string.Empty;
+        lblTransType.Text = string.Empty;
+    }
+
+    private void DoAuthorizationAndPayment()
+    {
+        AuthorizeNetRequest objAuthorizeNetRequest = new AuthorizeNetRequest();
+        CREDITCARD_NUMBER = txtCreditCardNumber.Text.Trim();
+        string month = DdlMonth.SelectedItem.Text;
+        string year = DdlYear.SelectedItem.Text;
+        CARD_EXPIRATION_DATE = month + "-" + year;
+        // This is the account information for merchant account given by Authorize.Net people in email
+        // I can see transaction history here.
+        objtp_config = objClsMiscellaneousSettings.GetTestLoginId();
+        if(objtp_config!=null)
+        {
+            LOGINID = objtp_config.tpc_value;
+        }
+
+        objAuthorizeNetRequest.Login = LOGINID;
+        objAuthorizeNetRequest.Amount = Convert.ToDecimal(txtAmount.Text.Trim());
+        objAuthorizeNetRequest.CardNumber = CREDITCARD_NUMBER;
+        objAuthorizeNetRequest.CardExpirationDate = CARD_EXPIRATION_DATE;
+        objAuthorizeNetRequest.TransactionType = AuthorizeNet.TransactionType.CREDIT;
+
+        // Below is the API created by me by registering for test account.
+        objtp_config = objClsMiscellaneousSettings.GetTestTransactionKey();
+        if (objtp_config != null)
+        {
+            TRANSACTION_KEY = objtp_config.tpc_value;
+        }
+
+        objAuthorizeNetRequest.TransactionKey = TRANSACTION_KEY;
+
+        AuthorizeNetResponse objAuthorizeNetResponse = AuthorizeNet.CallAuthorizeNetMethod(objAuthorizeNetRequest);
+
+        lblTransType.Text = "CREDIT";
+
+        if (objAuthorizeNetResponse.IsSuccess)
+        {
+
+            TransationID = objAuthorizeNetResponse.TransactionId;
+            ClsCustomerOrderDetail objClsCustomerOrderDetail = new ClsCustomerOrderDetail();
+            lblMessage.Text = objClsCustomerOrderDetail.UpdateTransactionHistory(Convert.ToInt32(ViewState["TransactionDetailId"]), 2, TransationID);
+            //lblMessage.Text = "Success. Transaction ID : " + objAuthorizeNetResponse.TransactionId + "Message" + objAuthorizeNetResponse.SuccessMessage;
+        }
+        else
+        {
+            ClsCustomerOrderDetail objClsCustomerOrderDetail = new ClsCustomerOrderDetail();
+           objClsCustomerOrderDetail.UpdateTransactionHistory(Convert.ToInt32(ViewState["TransactionDetailId"]), 3, null);
+            lblMessage.Text = "Error : " + objAuthorizeNetResponse.Errors;
+        }
+
+    }
+
+    protected void btnPay_Click(object sender, EventArgs e)
+    {
+        
+        int retValue = 0;
+        tp_transaction_detail dbObjAddTransactionDetail = new tp_transaction_detail();
+        dbObjAddTransactionDetail.td_od_id = 7;
+        dbObjAddTransactionDetail.td_transaction_date = DateTime.Now;
+        dbObjAddTransactionDetail.Php_Payment_Status = 1;
+        dbObjAddTransactionDetail.Php_Payment_Amount = "350";
+        dbObjAddTransactionDetail.Php_PG_Transaction_id = null;
+
+
+        dbEntities.tp_transaction_detail.Add(dbObjAddTransactionDetail);
+        retValue = dbEntities.SaveChanges();
+        if(retValue>0)
+        {
+            ViewState["TransactionDetailId"] = dbObjAddTransactionDetail.td_id;
+            DoAuthorizationAndPayment();
+        }
+    }
+}

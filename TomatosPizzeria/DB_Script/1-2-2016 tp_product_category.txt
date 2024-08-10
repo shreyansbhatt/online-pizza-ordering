@@ -1,0 +1,18 @@
+CREATE TABLE [dbo].[tp_product_category] (
+    [pc_id]           INT            IDENTITY (1, 1) NOT NULL,
+	[pc_sd_id]        INT            NULL,
+    [pc_seqno]        NVARCHAR (100) NOT NULL,
+    [pc_name]         VARCHAR (100)  NULL,
+    [pc_parent]       INT            NULL,
+    [pc_description1] NVARCHAR (100) NULL,
+    [pc_image_url]    NVARCHAR (100) NULL,
+    [pc_isdeleted]    BIT            NULL,
+    [createdby]       INT            NULL,
+    [modifiedby]      INT            NULL,
+    [createdon]       DATETIME       NULL,
+    [modifiedon]      DATETIME       NULL,
+    CONSTRAINT [PK_tp_product_category] PRIMARY KEY CLUSTERED ([pc_id] ASC)
+);
+
+
+ALTER TABLE [dbo].[tp_product_category] ALTER COLUMN [pc_description1] NVARCHAR (MAX) NULL;

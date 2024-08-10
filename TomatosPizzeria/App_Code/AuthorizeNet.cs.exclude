@@ -1,0 +1,253 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Web;
+
+/// <summary>
+/// Summary description for AuthorizeNet
+/// </summary>
+public class AuthorizeNet
+{
+    TP_DatabaseEntities dbEntities = new TP_DatabaseEntities();
+
+
+
+    public static string AUTHORIZENET_LIVE_URL = string.Empty;
+    public static string AUTHORIZENET_TEST_URL = string.Empty;
+
+    #region Private Member(s)
+    private static string UNEXPECTED_ERROR = "Unexpected error";
+    //private static string AUTHORIZENET_TEST_URL = "https://test.authorize.net/gateway/transact.dll";
+    //private static string AUTHORIZENET_LIVE_URL = "https://authorize.net/gateway/transact.dll";
+    #endregion
+
+
+
+    #region Transaction Type Enum(s)
+    // Transaction Type
+    public enum TransactionType
+    {
+        AUTH_CAPTURE = 0,
+        AUTH_ONLY,
+        PRIOR_AUTH_CAPTURE,
+        CREDIT,
+        VOID
+    }
+
+    // Get string for Enum
+    public static string GetSringForEnum(TransactionType TransType)
+    {
+        switch (TransType)
+        {
+            case TransactionType.AUTH_CAPTURE:
+                return "AUTH_CAPTURE";
+                break;
+            case TransactionType.AUTH_ONLY:
+                return "AUTH_ONLY";
+                break;
+            case TransactionType.PRIOR_AUTH_CAPTURE:
+                return "PRIOR_AUTH_CAPTURE";
+                break;
+            case TransactionType.CREDIT:
+                return "CREDIT";
+                break;
+            case TransactionType.VOID:
+                return "VOID";
+            default:
+                return string.Empty;
+                break;
+        }
+    }
+
+    #endregion
+
+
+    /// <summary>
+    /// Generate Rququest string
+    /// </summary>
+    /// <param name="objAuthorizeNetRequest"></param>
+    /// <returns></returns>
+    private static string GetRequestString(AuthorizeNetRequest objAuthorizeNetRequest, TransactionType TransType)
+    {
+        StringBuilder stbRequest = new StringBuilder(string.Empty);
+
+        try
+        {
+
+            stbRequest.Append("x_login=");
+            stbRequest.Append(objAuthorizeNetRequest.Login);
+            stbRequest.Append("&x_type=");
+            stbRequest.Append(GetSringForEnum(TransType));
+            stbRequest.Append("&x_amount=");
+            stbRequest.Append(objAuthorizeNetRequest.Amount);
+            stbRequest.Append("&x_card_num=");
+            stbRequest.Append(objAuthorizeNetRequest.CardNumber);
+            stbRequest.Append("&x_exp_date=");
+            stbRequest.Append(objAuthorizeNetRequest.CardExpirationDate);
+            stbRequest.Append("&x_tran_key=");
+            stbRequest.Append(objAuthorizeNetRequest.TransactionKey);
+            stbRequest.Append("&x_relay_response=FALSE");
+            stbRequest.Append("&x_delim_data=TRUE");
+            stbRequest.Append("&x_delim_char=|");
+            stbRequest.Append("&x_email=chiragrdarji@yahoo.co.in");
+            // If x_test_request = FALSE, TransactionId is generated.
+            stbRequest.Append("&x_test_request=FALSE");
+
+            // First name and Last will be displayed in Transaction report. (LastName,FirstName)
+            stbRequest.Append("&x_first_name=Chirag");
+            stbRequest.Append("&x_last_name=Darji");
+            stbRequest.Append("&x_company=XO Limited");
+
+
+
+            if (TransType == TransactionType.CREDIT || TransType == TransactionType.PRIOR_AUTH_CAPTURE || TransType == TransactionType.VOID)
+            {
+                stbRequest.Append("&x_trans_id=");
+                stbRequest.Append(objAuthorizeNetRequest.TransactionId);
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorHandler.WriteError(ex);
+        }
+        return stbRequest.ToString();
+    }
+
+
+    /// <summary>
+    /// Authorize the merchant detail and if merchant is valid process the credit card.
+    /// </summary>
+    /// <param name="objAuthorizeNetRequest"></param>
+    /// <returns></returns>
+    public static AuthorizeNetResponse CallAuthorizeNetMethod(AuthorizeNetRequest objAuthorizeNetRequest)
+    {
+        AuthorizeNetResponse objAuthorizeNetResponse = new AuthorizeNetResponse();
+        try
+        {
+            string strRequest = GetRequestString(objAuthorizeNetRequest, objAuthorizeNetRequest.TransactionType);
+            string strResponse = string.Empty;
+            ClsMiscellaneousSettings objClsMiscellaneousSettings = new ClsMiscellaneousSettings();
+            tp_config objtp_config = new tp_config();
+
+            //objtp_config = objClsMiscellaneousSettings.GetTestPaymentUrl();
+            //if (objtp_config != null)
+            //{
+            //    AUTHORIZENET_TEST_URL = objtp_config.tpc_value;
+            //}
+
+            objtp_config = objClsMiscellaneousSettings.GetLivePaymentUrl();
+            if (objtp_config != null)
+            {
+                AUTHORIZENET_LIVE_URL = objtp_config.tpc_value;
+            }
+
+            //WebRequest objWebRequest = WebRequest.Create(AUTHORIZENET_TEST_URL); //For Testing
+
+            WebRequest objWebRequest = WebRequest.Create(AUTHORIZENET_LIVE_URL);
+            //For Live
+            objWebRequest.Method = "POST";
+            objWebRequest.ContentLength = strRequest.Length;
+            objWebRequest.ContentType = "application/x-www-form-urlencoded";
+
+            // Add request parameters to memory stream before sending the web request.
+            using (StreamWriter objStreamWriter = new StreamWriter(objWebRequest.GetRequestStream()))
+            {
+                objStreamWriter.Write(strRequest);
+                objStreamWriter.Close();
+            }
+
+
+            // Get Response back.
+            WebResponse objWebResponse = objWebRequest.GetResponse();
+
+            // Retrieve result parameter.
+            using (StreamReader objStreamReader = new StreamReader(objWebResponse.GetResponseStream()))
+            {
+                strResponse = objStreamReader.ReadToEnd();
+                objStreamReader.Close();
+            }
+
+            HandleResponse(strResponse, objAuthorizeNetResponse);
+
+        }
+        catch (Exception ex)
+        {
+            ErrorHandler.WriteError(ex);
+        }
+        return objAuthorizeNetResponse;
+    }
+
+
+    /// <summary>
+    /// Set Response to indicate failure
+    /// </summary>
+    /// <param name="objAuthorizeNetResponse"></param>
+    /// <param name="ErrorMessage"></param>
+    private static void HandleError(AuthorizeNetResponse objAuthorizeNetResponse, string ErrorMessage)
+    {
+        try
+        {
+            objAuthorizeNetResponse.IsSuccess = false;
+            objAuthorizeNetResponse.Errors = ErrorMessage;
+        }
+        catch (Exception ex)
+        {
+            ErrorHandler.WriteError(ex);
+        }
+    }
+
+
+    /// <summary>
+    /// Check the response and identify the result of the request.
+    /// </summary>
+    /// <param name="strResponse"></param>
+    /// <param name="objAuthorizeNetResponse"></param>
+    private static void HandleResponse(string strResponse, AuthorizeNetResponse objAuthorizeNetResponse)
+    {
+        /**********************************************************************************************************************************************************************************************************
+176:          * We will get the response srting as shown below, this is a sample string
+177:          * 
+178:          * 1|1|1|This transaction has been approved.|RmFjFi|Y|508252758|||100.00|CC|auth_capture||||||||||||chiragrdarji@yahoo.co.in||||||||||||||AAD0537178B11C0F1105614FD1774773||2||||||||||||||||||||||||||||
+179:          * 
+180:          * The first value before the first pipe(|) symbol indicates the result.
+181:          * Below is teh link that represents the different Response code
+182:          * http://www.authorize.net/support/Merchant/Transaction_Response/Response_Reason_Codes_and_Response_Reason_Text.htm
+183:          **********************************************************************************************************************************************************************************************************/
+        try
+        {
+            string[] strWebResponse = strResponse.Split(new char[] { '|' }, StringSplitOptions.None);
+
+            if (strResponse != null)
+            {
+                // Check the response
+                if (strWebResponse[0] == "1")
+                {
+                    objAuthorizeNetResponse.IsSuccess = true;
+                    if (strWebResponse.Length > 3)
+                        objAuthorizeNetResponse.SuccessMessage = strWebResponse[3];
+                    // If x_test_request = FALSE, we will get transaction id else Transaction id = 0
+                    if (strWebResponse.Length > 6)
+                        objAuthorizeNetResponse.TransactionId = strWebResponse[6];
+                }
+                else
+                {
+                    if (strWebResponse.Length > 3)
+                        HandleError(objAuthorizeNetResponse, strWebResponse[3]);
+                    else
+                        HandleError(objAuthorizeNetResponse, UNEXPECTED_ERROR);
+                }
+            }
+            else
+            {
+                HandleError(objAuthorizeNetResponse, UNEXPECTED_ERROR);
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorHandler.WriteError(ex);
+        }
+    }
+}

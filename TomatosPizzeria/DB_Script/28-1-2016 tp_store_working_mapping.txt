@@ -1,0 +1,4 @@
+ALTER TABLE [dbo].[tp_store_working_mapping] ALTER COLUMN [swm_end_time] DATETIME NULL;
+
+ALTER TABLE [dbo].[tp_store_working_mapping] ALTER COLUMN [swm_start_time] DATETIME NULL;
+
